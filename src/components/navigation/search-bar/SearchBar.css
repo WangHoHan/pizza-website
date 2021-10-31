@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+input {
+    border: none;
+    border-radius: 7px;
+    color: red;
+    font-family: 'IBMPlexMono', monospace, -apple-system;
+    font-size: 16px;
+    padding: 0.8rem;
+    text-align: center;
+    width: 100%;
+}
+
+input:focus {
+    outline-color: wheat;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+}

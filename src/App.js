@@ -1,9 +1,14 @@
+import {BrowserRouter, Route} from 'react-router-dom';
 import './App.css';
+import Navigation from './components/navigation/Navigation';
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <BrowserRouter>
+        <Navigation />
+        <Route path='/'>
+        </Route>
+    </BrowserRouter>
   );
 }
 
