@@ -6,6 +6,7 @@ import logo from '../../assets/logo.png';
 import pizzaBox from '../../assets/pizza-box.png';
 import './Navigation.css';
 import SearchBar from './search-bar/SearchBar';
+import './search-bar/SearchBar.css';
 
 const Navigation = () => {
     return (
@@ -18,7 +19,7 @@ const Navigation = () => {
                     </Link>
                 </picture>
                 <SearchBar />
-                <picture>
+                <picture className='shopping-cart'>
                     <source srcSet={pizzaBox} />
                     <img className='pizza-box' src={pizzaBox} alt='Pizza box' />
                 </picture>
