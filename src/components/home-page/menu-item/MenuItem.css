@@ -1,0 +1,22 @@
+article {
+    background-color: white;
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+img {
+    max-width: 240px;
+}
+
+h1 {
+    color: brown;
+    margin-top: 0.5rem;
+}
+
+h4 {
+    color: #617d98;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}

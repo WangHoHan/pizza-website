@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import {actionCreators} from '../../store'
 import {translate} from '../../dictionaries/translate';
 import {pizzaPictureDictionary} from '../../dictionaries/pizzaPictureDictionary';
+import './HomePage.css';
 import MenuItem from './menu-item/MenuItem';
 
 const url = 'http://localhost:3333/api/pizza';
@@ -19,7 +20,7 @@ const HomePage = () => {
         <main>
             <section>
                 {menu.map((menuItem) => {
-                    return <MenuItem id={menuItem.id} name={translate[menuItem.name]} price={menuItem.price}
+                    return <MenuItem key={menuItem.id} name={translate[menuItem.name]} price={menuItem.price}
                                      picture={pizzaPictureDictionary[translate[menuItem.name]]} />
                 })}
             </section>

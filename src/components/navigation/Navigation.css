@@ -1,5 +1,7 @@
 header {
     background-color: yellow;
+    -webkit-border-bottom-left-radius: 0.6rem;
+    border-bottom-right-radius: 0.6rem;
     padding: 0.4rem;
 }
 

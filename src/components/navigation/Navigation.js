@@ -6,7 +6,6 @@ import logo from '../../assets/navigation/logo.png';
 import pizzaBox from '../../assets/navigation/pizza-box.png';
 import './Navigation.css';
 import SearchBar from './search-bar/SearchBar';
-import './search-bar/SearchBar.css';
 
 const Navigation = () => {
     return (
