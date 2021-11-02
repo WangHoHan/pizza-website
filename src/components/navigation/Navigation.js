@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Switch from "react-switch";
-import crescent from '../../assets/crescent.png';
-import logo from '../../assets/logo.png';
-import pizzaBox from '../../assets/pizza-box.png';
+import crescent from '../../assets/navigation/crescent.png';
+import logo from '../../assets/navigation/logo.png';
+import pizzaBox from '../../assets/navigation/pizza-box.png';
 import './Navigation.css';
 import SearchBar from './search-bar/SearchBar';
 import './search-bar/SearchBar.css';
