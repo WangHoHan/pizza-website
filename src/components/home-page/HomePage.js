@@ -2,6 +2,9 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {actionCreators} from '../../store'
+import {translate} from '../../dictionaries/translate';
+import {pizzaPictureDictionary} from '../../dictionaries/pizzaPictureDictionary';
+import MenuItem from './menu-item/MenuItem';
 
 const url = 'http://localhost:3333/api/pizza';
 
@@ -15,8 +18,9 @@ const HomePage = () => {
     return (
         <main>
             <section>
-                {menu.map(({id}) => {
-                    return <h1>{id}</h1>
+                {menu.map((menuItem) => {
+                    return <MenuItem id={menuItem.id} name={translate[menuItem.name]} price={menuItem.price}
+                                     picture={pizzaPictureDictionary[translate[menuItem.name]]} />
                 })}
             </section>
         </main>
