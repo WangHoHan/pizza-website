@@ -54,8 +54,8 @@ input {
         row-gap: 1rem;
     }
 
-    img {
-        width: 100%;
+    .pizza-logo {
+        max-width: 110px;
     }
 
     input {
