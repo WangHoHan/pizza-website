@@ -18,7 +18,7 @@ const HomePage = () => {
     }, []);
     return (
         <main>
-            <section>
+            <section className='section-home-page'>
                 {menu.map((menuItem) => {
                     return <MenuItem key={menuItem.id} name={translate[menuItem.name]} price={menuItem.price}
                                      picture={pizzaPictureDictionary[translate[menuItem.name]]} />

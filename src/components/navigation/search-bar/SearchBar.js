@@ -3,7 +3,7 @@ import './SearchBar.css';
 
 const SearchBar = () => {
     return (
-        <input type='text' placeholder='let me help you find your pizza :)' />
+        <input className='input-search-bar' type='text' placeholder='let me help you find your pizza :)' />
     );
 };
 

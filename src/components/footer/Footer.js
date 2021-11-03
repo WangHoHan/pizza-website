@@ -3,8 +3,8 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-      <footer>
-          <address>
+      <footer className='footer-footer'>
+          <address className='address-footer'>
               created by Tomasz Adamczyk
           </address>
       </footer>

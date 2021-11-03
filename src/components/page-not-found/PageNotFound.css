@@ -1,0 +1,39 @@
+.section-page-not-found {
+    display: block;
+    margin: 2rem 1rem;
+    text-align: center;
+}
+
+.article-page-not-found {
+    background-color: white;
+    border-radius: 1rem;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    width: min-content;
+}
+
+.food-not-found {
+    max-width: 380px;
+}
+
+.button-page-not-found {
+    background-color: tomato;
+    border-radius: 0.4rem;
+    border-style: none;
+    color: white;
+    font-size: 20px;
+    height: 3rem;
+    width: 14rem;
+    margin: 2rem 1rem;
+}
+
+.button-page-not-found:hover {
+    background-color: chocolate;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 480px) {
+    .food-not-found {
+        max-width: 220px;
+    }
+}

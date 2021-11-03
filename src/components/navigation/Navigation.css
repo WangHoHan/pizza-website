@@ -1,11 +1,11 @@
-header {
+.header-navigation {
     -webkit-border-bottom-left-radius: 0.6rem;
     -webkit-border-bottom-right-radius: 0.6rem;
     background-color: yellow;
     padding: 0.4rem;
 }
 
-nav {
+.nav-navigation {
     align-items: center;
     display: grid;
     grid-gap: 2rem;
@@ -15,7 +15,7 @@ nav {
     justify-items: center;
 }
 
-.logo {
+.logo-navigation {
     grid-area: logo;
 }
 
@@ -23,16 +23,20 @@ nav {
     max-width: 160px;
 }
 
-input {
+.input-search-bar {
     grid-area: search-bar;
 }
 
-.shopping-cart {
+.shopping-cart-navigation {
     grid-area: shopping-cart;
 }
 
 .pizza-box {
     max-width: 70px;
+}
+
+.pizza-box:hover {
+    cursor: pointer;
 }
 
 .night-mode {
@@ -47,7 +51,7 @@ input {
 }
 
 @media only screen and (max-width: 480px) {
-    nav {
+    .nav-navigation {
         grid-template-areas:
                 "night-mode logo shopping-cart"
                 "search-bar search-bar search-bar";
@@ -60,7 +64,7 @@ input {
         max-width: 110px;
     }
 
-    input {
+    .input-search-bar {
         width: 90% !important;
     }
 }

@@ -9,16 +9,16 @@ import SearchBar from './search-bar/SearchBar';
 
 const Navigation = () => {
     return (
-        <header>
-            <nav>
-                <picture className='logo'>
+        <header className='header-navigation'>
+            <nav className='nav-navigation'>
+                <picture className='logo-navigation'>
                     <source srcSet={logo} />
-                    <Link to='/'>
+                    <Link to='/home'>
                         <img className='pizza-logo' src={logo} alt='Pizza logo' />
                     </Link>
                 </picture>
                 <SearchBar />
-                <picture className='shopping-cart'>
+                <picture className='shopping-cart-navigation'>
                     <source srcSet={pizzaBox} />
                     <img className='pizza-box' src={pizzaBox} alt='Pizza box' />
                 </picture>
