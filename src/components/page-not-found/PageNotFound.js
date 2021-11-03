@@ -13,10 +13,8 @@ const PageNotFound = () => {
                       <img className='food-not-found' src={foodNotFound} alt='Food not found' />
                   </picture>
               </article>
-              <Link to='home'>
-                  <button className='button-page-not-found' type='button' value='back to home page'>
-                      back to home page
-                  </button>
+              <Link className='link-page-not-found' role='button' to='home'>
+                  back to home page
               </Link>
           </section>
         </main>

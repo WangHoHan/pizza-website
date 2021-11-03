@@ -16,18 +16,21 @@
     max-width: 380px;
 }
 
-.button-page-not-found {
+.link-page-not-found {
     background-color: tomato;
     border-radius: 0.4rem;
     border-style: none;
     color: white;
+    display: inline-block;
     font-size: 20px;
+    line-height: 3rem;
     height: 3rem;
-    width: 14rem;
     margin: 2rem 1rem;
+    text-decoration: none;
+    width: 14rem;
 }
 
-.button-page-not-found:hover {
+.link-page-not-found:hover {
     background-color: chocolate;
     cursor: pointer;
 }
