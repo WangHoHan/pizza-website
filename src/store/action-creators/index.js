@@ -1,7 +1,13 @@
 export const loadMenu  = (url) => {
     const getMenu = async (url) => {
-        const response = await fetch(url);
-        return await response.json();
+        try {
+            const response = await fetch(url);
+            return await response.json();
+        }
+        catch (error) {
+            console.log("data could not be fetched")
+            return [];
+        }
     };
     return (dispatch) => {
         return getMenu(url)
