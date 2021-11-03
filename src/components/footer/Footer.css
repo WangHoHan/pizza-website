@@ -1,0 +1,15 @@
+footer {
+    -webkit-border-top-left-radius: 0.6rem;
+    -webkit-border-top-right-radius: 0.6rem;
+    align-items: center;
+    background-color: yellow;
+    display: flex;
+    height: 2rem;
+    justify-content: center;
+}
+
+address {
+    color: darkgreen;
+    font-size: 12px;
+    font-weight: bold;
+}
