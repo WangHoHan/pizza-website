@@ -1,9 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Switch from "react-switch";
-import crescent from '../../assets/navigation/crescent.png';
 import logo from '../../assets/navigation/logo.png';
 import pizzaBox from '../../assets/navigation/pizza-box.png';
+import pixarOff from '../../assets/navigation/night-mode/pixar-off.png';
 import './Navigation.css';
 import SearchBar from './search-bar/SearchBar';
 
@@ -22,13 +21,10 @@ const Navigation = () => {
                     <source srcSet={pizzaBox} />
                     <img className='pizza-box' src={pizzaBox} alt='Pizza box' />
                 </picture>
-                <div className='night-mode'>
-                    <picture>
-                        <source srcSet={crescent} />
-                        <img className='crescent' src={crescent} alt='Crescent' />
-                    </picture>
-                    <Switch checked={false} />
-                </div>
+                <picture>
+                    <source srcSet={pixarOff} />
+                    <img className='pixar-off' src={pixarOff} alt='Pixar off' />
+                </picture>
             </nav>
         </header>
     );
