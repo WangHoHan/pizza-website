@@ -1,5 +1,10 @@
 import {createStore, applyMiddleware} from 'redux';
-import thunk from 'redux-thunk';
+import createSagaMiddleware from 'redux-saga';
+import {watchGetFood} from '../sagas/saga';
 import reducers from './reducers';
 
-export const store = createStore(reducers, {}, applyMiddleware(thunk));
+const sagaMiddleware = createSagaMiddleware();
+
+export const store = createStore(reducers, {}, applyMiddleware(sagaMiddleware));
+
+sagaMiddleware.run(watchGetFood);

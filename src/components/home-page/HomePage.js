@@ -5,23 +5,24 @@ import {actionCreators} from '../../store'
 import {translate} from '../../dictionaries/translate';
 import {pizzaPictureDictionary} from '../../dictionaries/pizzaPictureDictionary';
 import './HomePage.css';
-import MenuItem from './menu-item/MenuItem';
-
-const url = 'http://localhost:3333/api/pizza';
+import HomePageElement from './home-page-element/HomePageElement';
 
 const HomePage = () => {
     const dispatch = useDispatch();
-    const menu = useSelector((state) => state.menu);
-    const {loadMenu} = bindActionCreators(actionCreators, dispatch);
+    const food = useSelector((state) => state.food);
+    const {getFood} = bindActionCreators(actionCreators, dispatch);
+
     useEffect(() => {
-        loadMenu(url);
-    }, []);
+        getFood();
+    }, [dispatch]);
+
     return (
         <main>
             <section className='section-home-page'>
-                {menu.map((menuItem) => {
-                    return <MenuItem key={menuItem.id} name={translate[menuItem.name]} price={menuItem.price}
-                                     picture={pizzaPictureDictionary[translate[menuItem.name]]} />
+                {food.map((homePageElement) => {
+                    return <HomePageElement key={homePageElement.id} name={translate[homePageElement.name]}
+                                            price={homePageElement.price}
+                                            picture={pizzaPictureDictionary[translate[homePageElement.name]]} />
                 })}
             </section>
         </main>

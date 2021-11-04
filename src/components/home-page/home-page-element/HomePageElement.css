@@ -1,4 +1,4 @@
-.article-menu-item {
+.article-home-page-element {
     background-color: white;
     border-radius: 1rem;
     margin: 1rem;
@@ -6,20 +6,20 @@
     text-align: center;
 }
 
-.article-menu-item:hover {
+.article-home-page-element:hover {
     cursor: pointer;
 }
 
-.img-menu-item {
+.img-home-page-element {
     max-width: 240px;
 }
 
-.h1-menu-item {
+.h1-home-page-element {
     color: brown;
     margin-top: 0.5rem;
 }
 
-.h4-menu-item {
+.h4-home-page-element {
     color: #617d98;
     font-size: 0.75rem;
     margin-top: 0.25rem;

@@ -1,6 +1,6 @@
 const reducer = (state = [], action) => {
     switch (action.type) {
-        case 'LOAD_MENU':
+        case 'SET_FOOD':
             return action.payload;
         default:
             return state;

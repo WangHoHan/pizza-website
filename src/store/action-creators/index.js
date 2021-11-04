@@ -1,25 +1,16 @@
-export const loadMenu  = (url) => {
-
-    const getMenu = async (url) => {
-        const response = await fetch(url);
-        return await response.json();
-    };
-
+export const getFood  = () => {
     return (dispatch) => {
-        return getMenu(url)
-            .then(function(data) {
-                dispatch({
-                    type: 'LOAD_MENU',
-                    payload: data
-                });
-            })
-            .catch((error) => {
-                console.log(error);
-                dispatch({
-                    type: 'LOAD_MENU',
-                    payload: []
-                });
-            });
-    }
+        dispatch({
+            type: 'GET_FOOD'
+        });
+    };
 };
 
+export const setFood = (food) => {
+    return (dispatch) => {
+      dispatch({
+          type: 'SET_FOOD',
+          payload: food
+      })
+    };
+};
