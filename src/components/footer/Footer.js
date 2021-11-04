@@ -5,7 +5,7 @@ const Footer = () => {
     return (
       <footer className='footer-footer'>
           <address className='address-footer'>
-              created by Tomasz Adamczyk
+              Tomasz Adamczyk
           </address>
       </footer>
     );

@@ -12,7 +12,10 @@
 }
 
 .address-footer {
-    color: darkgreen;
-    font-size: 12px;
-    font-weight: bold;
+    color: tomato;
+    font-family: HOTPIZZA, monospace;
+    font-size: 13px;
+    font-weight: normal;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.2rem;
 }

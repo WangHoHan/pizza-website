@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "HOTPIZZA";
+  src: local("HOTPIZZA"),
+  url("../src/fonts/HOTPIZZA.ttf") format("truetype");
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
