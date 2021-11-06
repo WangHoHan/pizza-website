@@ -21,17 +21,15 @@ const HomePage = () => {
     }, []);
 
     return (
-        <>
-        {isLoading ? <LoadingElement /> : <main>
-                <section className='section-home-page'>
-                    {food.map((homePageElement) => {
-                        return <HomePageElement key={homePageElement.id} name={translate[homePageElement.name]}
-                                                price={homePageElement.price}
-                                                picture={pizzaPictureDictionary[translate[homePageElement.name]]} />
-                    })}
-                </section>
-            </main>}
-        </>
+        <main>
+        {isLoading ? <LoadingElement /> : <section className='section-home-page'>
+                {food.map((homePageElement) => {
+                    return <HomePageElement key={homePageElement.id} name={translate[homePageElement.name]}
+                                            price={homePageElement.price}
+                                            picture={pizzaPictureDictionary[translate[homePageElement.name]]} />
+                })}
+            </section>}
+        </main>
     );
 };
 
