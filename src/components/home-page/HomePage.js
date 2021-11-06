@@ -14,6 +14,7 @@ const HomePage = () => {
 
     useEffect(() => {
         getFood();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

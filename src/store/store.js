@@ -5,7 +5,6 @@ import {watchGetFood} from '../sagas/saga';
 import reducers from './reducers';
 
 const sagaMiddleware = createSagaMiddleware();
-
 const middlewares = [thunk, sagaMiddleware];
 
 export const store = createStore(reducers, {}, applyMiddleware(...middlewares));

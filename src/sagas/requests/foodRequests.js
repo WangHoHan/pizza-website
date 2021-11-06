@@ -1,8 +1,9 @@
 import axios from 'axios';
+import {URL_PIZZA} from '../../definitions';
 
 export const requestGetFood = () => {
     return axios.request({
        method: 'get',
-       url: 'http://localhost:3333/api/pizza'
+       url: URL_PIZZA
     });
 };
