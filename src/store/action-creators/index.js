@@ -11,6 +11,6 @@ export const setFood = (food) => {
       dispatch({
           type: 'SET_FOOD',
           payload: food
-      })
+      });
     };
 };

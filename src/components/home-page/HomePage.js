@@ -14,7 +14,7 @@ const HomePage = () => {
 
     useEffect(() => {
         getFood();
-    }, [dispatch]);
+    }, []);
 
     return (
         <main>
