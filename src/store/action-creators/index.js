@@ -1,4 +1,13 @@
-import {GET_FOOD, SET_FOOD} from '../../definitions';
+import {SET_LOADING_ELEMENT, GET_FOOD, SET_FOOD} from '../../definitions';
+
+export const setLoadingElement = (value) => {
+    return (dispatch) => {
+        dispatch({
+            type: SET_LOADING_ELEMENT,
+            payload: value
+        });
+    };
+};
 
 export const getFood  = () => {
     return (dispatch) => {
