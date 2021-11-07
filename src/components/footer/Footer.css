@@ -13,9 +13,10 @@
 
 .address-footer {
     color: tomato;
-    font-family: HOTPIZZA, monospace;
     font-size: 13px;
+    font-style: normal;
     font-weight: normal;
     letter-spacing: 0.1rem;
+    text-transform: lowercase;
     word-spacing: 0.2rem;
 }
