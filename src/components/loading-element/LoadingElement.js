@@ -10,7 +10,19 @@ const LoadingElement = () => {
             <article className='article-loading-element'>
                 <picture>
                     <source srcSet={verona} />
-                    <img className='img-loading-element' src={verona} alt={translate[verona]} />
+                    <motion.div
+                        style={{
+                            x: -130
+                        }}
+                        animate={{
+                            x: 0,
+                            rotate: 80
+                        }}
+                        transition={{
+                            duration: 1
+                        }}>
+                        <img className='img-loading-element' src={verona} alt={translate[verona]} />
+                    </motion.div>
                 </picture>
                 <h1 className='h1-loading-element'>loading...</h1>
             </article>

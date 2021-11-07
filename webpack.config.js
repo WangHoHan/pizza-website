@@ -14,10 +14,10 @@ module.exports = {
             {
                 exclude: '/node_modules/',
                 loader: 'babel-loader',
+                test: /\.jsx?$/,
                 options: {
                     presets: ['@babel/preset-env', ['@babel/preset-react', {"runtime": "automatic"}]]
-                },
-                test: /\.jsx?$/
+                }
             },
             {
                 test: /\.css$/i,
@@ -29,8 +29,8 @@ module.exports = {
                 use: []
             },
             {
-                test: /\.(gif|svg|jpe?g|png|webp|ico|ttf)$/,
                 loader: 'file-loader',
+                test: /\.(gif|svg|jpe?g|png|webp|ico|ttf)$/,
                 options: {
                     name: '[path][name].[ext]'
                 }
