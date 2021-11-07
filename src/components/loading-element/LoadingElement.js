@@ -1,4 +1,5 @@
 import React from 'react';
+import {motion} from 'framer-motion';
 import {translate} from '../../dictionaries/translate';
 import verona from '../../assets/pizzas/verona.webp';
 import './LoadingElement.css';
