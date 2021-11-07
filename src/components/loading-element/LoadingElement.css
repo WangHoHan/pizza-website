@@ -1,0 +1,23 @@
+.section-loading-element {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1rem 1rem;
+}
+
+.article-loading-element {
+    background-color: white;
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+.img-loading-element {
+    max-width: 240px;
+}
+
+.h1-loading-element {
+    color: brown;
+    margin-top: 0.5rem;
+}
