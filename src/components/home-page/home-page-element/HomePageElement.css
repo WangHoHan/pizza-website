@@ -1,26 +1,54 @@
 .article-home-page-element {
     background-color: white;
     border-radius: 1rem;
+    height: 400px;
     margin: 1rem;
     padding: 1rem 2rem;
     text-align: center;
+    width: 240px;
 }
 
 .article-home-page-element:hover {
     cursor: pointer;
 }
 
-.img-home-page-element {
+.article-home-page-element:hover .flip-card {
+    transform: rotateY(180deg);
+}
+
+.flip-card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.flip-card-front, .flip-card-back {
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+.img-flip-card-front {
     max-width: 240px;
 }
 
-.h1-home-page-element {
+.h1-flip-card-front {
     color: brown;
     margin-top: 0.5rem;
 }
 
-.h4-home-page-element {
+.h4-flip-card-front {
     color: #617d98;
     font-size: 0.75rem;
     margin-top: 0.25rem;
+}
+
+.flip-card-back {
+    position: relative;
+    transform: rotateY(180deg);
+}
+
+.h1-flip-card-back {
+    color: brown;
+    margin-top: 2rem;
 }
