@@ -52,3 +52,9 @@
     color: brown;
     margin-top: 2rem;
 }
+
+@media only screen and (max-width: 480px) {
+    .article-home-page-element {
+        padding: 1rem 0.5rem;
+    }
+}
