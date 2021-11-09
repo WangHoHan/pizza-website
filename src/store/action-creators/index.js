@@ -1,4 +1,12 @@
-import {SET_SEARCH_BAR_DATA, SET_LOADING_ELEMENT, GET_FOOD, SET_FOOD} from '../../definitions';
+import {
+    SET_SEARCH_BAR_DATA,
+    SET_LOADING_FOOD,
+    SET_LOADING_INGREDIENTS,
+    GET_FOOD,
+    SET_FOOD,
+    GET_INGREDIENTS,
+    SET_INGREDIENTS
+} from '../../definitions';
 
 export const setSearchBarData = (data) => {
     return (dispatch) => {
@@ -9,10 +17,19 @@ export const setSearchBarData = (data) => {
     };
 };
 
-export const setLoadingElement = (value) => {
+export const setLoadingFood = (value) => {
     return (dispatch) => {
         dispatch({
-            type: SET_LOADING_ELEMENT,
+            type: SET_LOADING_FOOD,
+            payload: value
+        });
+    };
+};
+
+export const setLoadingIngredients = (value) => {
+    return (dispatch) => {
+        dispatch({
+            type: SET_LOADING_INGREDIENTS,
             payload: value
         });
     };
@@ -32,5 +49,22 @@ export const setFood = (food) => {
           type: SET_FOOD,
           payload: food
       });
+    };
+};
+
+export const getIngredients  = () => {
+    return (dispatch) => {
+        dispatch({
+            type: GET_INGREDIENTS
+        });
+    };
+};
+
+export const setIngredients = (ingredients) => {
+    return (dispatch) => {
+        dispatch({
+            type: SET_INGREDIENTS,
+            payload: ingredients
+        });
     };
 };
