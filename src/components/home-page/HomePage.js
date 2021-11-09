@@ -11,19 +11,23 @@ import HomePageElement from './home-page-element/HomePageElement';
 const HomePage = () => {
     const dispatch = useDispatch();
     const searchBarData = useSelector((state) => state.searchBar)
-    const isLoading = useSelector((state) => state.loadingElement);
+    const isLoadingFood = useSelector((state) => state.loadingFood);
+    const isLoadingIngredients = useSelector((state) => state.loadingIngredients);
     const food = useSelector((state) => state.food);
-    const {setLoadingElement, getFood} = bindActionCreators(actionCreators, dispatch);
+    const ingredients = useSelector((state) => state.ingredients);
+    const {setLoadingFood, setLoadingIngredients, getFood, getIngredients} = bindActionCreators(actionCreators, dispatch);
 
     useEffect(() => {
-        setLoadingElement(true);
+        setLoadingFood(true);
+        setLoadingIngredients(true);
         getFood();
+        getIngredients();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
         <main>
-        {isLoading ? <LoadingElement /> : <section className='section-home-page'>
+        {isLoadingFood && isLoadingIngredients ? <LoadingElement /> : <section className='section-home-page'>
                 {food.filter(homePageElement => translate[homePageElement.name].toLowerCase().includes(searchBarData.toLowerCase()))
                     .map(filteredHomePageElement => {
                     return <HomePageElement key={filteredHomePageElement.id}

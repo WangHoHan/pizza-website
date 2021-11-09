@@ -1,5 +1,5 @@
 import {all, call, put} from 'redux-saga/effects';
-import {setLoadingElement, setFood} from "../../store/action-creators";
+import {setLoadingFood, setFood} from '../../store/action-creators';
 import {requestGetFood} from '../requests/foodRequests';
 
 export function* handleGetFood() {
@@ -8,10 +8,10 @@ export function* handleGetFood() {
         const {data} = response;
         yield all([
             put(setFood(data)),
-            put(setLoadingElement(false))
+            put(setLoadingFood(false))
         ]);
     } catch (error) {
         console.log(error);
-        yield put(setLoadingElement(false));
+        yield put(setLoadingFood(false));
     }
 }
