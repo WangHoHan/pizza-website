@@ -1,0 +1,9 @@
+.flip-card-back {
+    position: relative;
+    transform: rotateY(180deg);
+}
+
+.h1-flip-card-back {
+    color: brown;
+    margin-top: 2rem;
+}

@@ -1,4 +1,4 @@
-.article-home-page-element {
+.article-flip-card {
     background-color: white;
     border-radius: 1rem;
     height: 400px;
@@ -9,11 +9,11 @@
     width: 240px;
 }
 
-.article-home-page-element:hover {
+.article-flip-card:hover {
     cursor: pointer;
 }
 
-.article-home-page-element:hover .flip-card {
+.article-flip-card:hover .flip-card {
     transform: rotateY(180deg);
 }
 
@@ -29,33 +29,8 @@
     position: absolute;
 }
 
-.img-flip-card-front {
-    max-width: 240px;
-}
-
-.h1-flip-card-front {
-    color: brown;
-    margin-top: 0.5rem;
-}
-
-.h4-flip-card-front {
-    color: #617d98;
-    font-size: 0.75rem;
-    margin-top: 0.25rem;
-}
-
-.flip-card-back {
-    position: relative;
-    transform: rotateY(180deg);
-}
-
-.h1-flip-card-back {
-    color: brown;
-    margin-top: 2rem;
-}
-
 @media only screen and (max-width: 480px) {
-    .article-home-page-element {
+    .article-flip-card {
         padding: 1rem 0.5rem;
     }
 }

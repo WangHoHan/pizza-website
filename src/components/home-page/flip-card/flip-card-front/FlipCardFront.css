@@ -1,0 +1,14 @@
+.img-flip-card-front {
+    max-width: 240px;
+}
+
+.h1-flip-card-front {
+    color: brown;
+    margin-top: 0.5rem;
+}
+
+.h4-flip-card-front {
+    color: #617d98;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
