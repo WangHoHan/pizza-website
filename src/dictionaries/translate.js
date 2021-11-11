@@ -7,5 +7,14 @@ export const translate = {
     'HAWAJSKA': 'HAWAIIAN',
     'VERONA': 'VERONA',
     'ROMA': 'ROMA',
-    'COLOSSEUM': 'COLOSSEUM'
+    'COLOSSEUM': 'COLOSSEUM',
+    'sos': 'sauce',
+    'ser': 'cheese',
+    'pieczarki': 'mushrooms',
+    'szynka': 'ham',
+    'salami': 'salami',
+    'ananas': 'pineapple',
+    'papryka': 'pepper',
+    'cebula': 'onion',
+    'pomidor': 'tomato'
 };

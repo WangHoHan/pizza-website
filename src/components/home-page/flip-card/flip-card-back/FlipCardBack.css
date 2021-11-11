@@ -7,3 +7,18 @@
     color: brown;
     margin-top: 2rem;
 }
+.ul-flip-card-back {
+    border: 1px solid tomato;
+    border-radius: 0.4rem;
+    color: #617d98;
+    font-size: 18px;
+    list-style-type: none;
+    letter-spacing: 0.1rem;
+    margin: 1rem 0;
+    padding: 1rem 0;
+}
+
+.li-flip-card-back {
+    margin: 1rem 0;
+}
+

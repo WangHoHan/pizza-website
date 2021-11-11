@@ -27,13 +27,13 @@ const HomePage = () => {
     return (
         <main>
         {isLoadingFood && isLoadingIngredients ? <LoadingElement /> : <section className='section-home-page'>
-                {food.filter(homePageElement => translate[homePageElement.name].toLowerCase().includes(searchBarData.toLowerCase()))
-                    .map(filteredHomePageElement => {
-                    return <FlipCard key={filteredHomePageElement.id}
-                                     toppings={filteredHomePageElement.ingredients}
-                                     name={translate[filteredHomePageElement.name]}
-                                     price={filteredHomePageElement.price}
-                                     picture={pizzaPictureDictionary[translate[filteredHomePageElement.name]]} />
+                {food.filter(pizza => translate[pizza.name].toLowerCase().includes(searchBarData.toLowerCase()))
+                    .map(filteredPizza => {
+                    return <FlipCard key={filteredPizza.id}
+                                     toppings={filteredPizza.ingredients}
+                                     name={translate[filteredPizza.name]}
+                                     price={filteredPizza.price}
+                                     picture={pizzaPictureDictionary[translate[filteredPizza.name]]} />
                 })}
             </section>}
         </main>
