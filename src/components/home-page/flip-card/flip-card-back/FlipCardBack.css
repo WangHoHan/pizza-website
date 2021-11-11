@@ -35,6 +35,7 @@
     letter-spacing: 0.1rem;
     padding: 0.5rem 0;
     position: absolute;
+    text-decoration: none;
     transform: translateX(-50%);
     transition: 0.4s;
     width: 100%;
