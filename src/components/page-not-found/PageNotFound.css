@@ -21,18 +21,19 @@
     border-radius: 0.4rem;
     border-style: none;
     color: white;
+    cursor: pointer;
     display: inline-block;
     font-size: 20px;
     line-height: 3rem;
     height: 3rem;
     margin: 2rem 1rem;
     text-decoration: none;
+    transition: 0.4s;
     width: 14rem;
 }
 
 .link-page-not-found:hover {
     background-color: chocolate;
-    cursor: pointer;
 }
 
 @media only screen and (max-width: 480px) {

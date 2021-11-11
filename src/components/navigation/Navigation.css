@@ -32,19 +32,13 @@
 }
 
 .pizza-box {
+    cursor: pointer;
     max-width: 80px;
 }
 
-.pizza-box:hover {
-    cursor: pointer;
-}
-
 .pixar-off {
-    max-width: 60px;
-}
-
-.pixar-off:hover {
     cursor: pointer;
+    max-width: 60px;
 }
 
 @media only screen and (max-width: 480px) {
