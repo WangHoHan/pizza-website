@@ -1,9 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {translate} from '../../../../dictionaries/translate';
 import './FlipCardBack.css';
 
-const FlipCardBack = ({toppings}) => {
+const FlipCardBack = ({id, toppings}) => {
     const ingredients = useSelector((state) => state.ingredients);
 
     return (
@@ -15,7 +16,9 @@ const FlipCardBack = ({toppings}) => {
                     return <li className='li-flip-card-back' key={filteredIngredient.id}>{translate[filteredIngredient.name].toLowerCase()}</li>
                 })}
             </ul>
-            <button className='pick'>pick</button>
+            <Link className='pick' role='button' to={`/product/${id}`}>
+                pick
+            </Link>
         </div>
     );
 };

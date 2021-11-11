@@ -30,6 +30,7 @@ const HomePage = () => {
                 {food.filter(pizza => translate[pizza.name].toLowerCase().includes(searchBarData.toLowerCase()))
                     .map(filteredPizza => {
                     return <FlipCard key={filteredPizza.id}
+                                     id={filteredPizza.id}
                                      toppings={filteredPizza.ingredients}
                                      name={translate[filteredPizza.name]}
                                      price={filteredPizza.price}

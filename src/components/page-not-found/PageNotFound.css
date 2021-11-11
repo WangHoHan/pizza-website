@@ -34,6 +34,7 @@
 
 .link-page-not-found:hover {
     background-color: chocolate;
+    text-decoration: underline;
 }
 
 @media only screen and (max-width: 480px) {
