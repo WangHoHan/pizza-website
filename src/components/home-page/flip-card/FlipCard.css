@@ -9,10 +9,6 @@
     width: 240px;
 }
 
-.article-flip-card:hover {
-    cursor: pointer;
-}
-
 .article-flip-card:hover .flip-card {
     transform: rotateY(180deg);
 }

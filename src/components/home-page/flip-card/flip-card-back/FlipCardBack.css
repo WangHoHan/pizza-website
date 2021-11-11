@@ -1,4 +1,5 @@
 .flip-card-back {
+    height: 366px;
     position: relative;
     transform: rotateY(180deg);
 }
@@ -22,3 +23,20 @@
     margin: 1rem 0;
 }
 
+.pick {
+    background-color: lightyellow;
+    border: 1px solid tomato;
+    border-radius: 0.5rem;
+    bottom: 0;
+    color: crimson;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    padding: 0.5rem 2rem;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+.pick:hover {
+    cursor: pointer;
+}

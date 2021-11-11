@@ -15,6 +15,7 @@ const FlipCardBack = ({toppings}) => {
                     return <li className='li-flip-card-back' key={filteredIngredient.id}>{translate[filteredIngredient.name].toLowerCase()}</li>
                 })}
             </ul>
+            <button className='pick'>pick</button>
         </div>
     );
 };
