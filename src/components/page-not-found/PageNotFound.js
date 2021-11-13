@@ -12,10 +12,10 @@ const PageNotFound = () => {
                       <source srcSet={foodNotFound} />
                       <img className='food-not-found' src={foodNotFound} alt='Food not found' />
                   </picture>
+                  <Link className='link-page-not-found' role='button' to='/home'>
+                      back to home page
+                  </Link>
               </article>
-              <Link className='link-page-not-found' role='button' to='/home'>
-                  back to home page
-              </Link>
           </section>
         </main>
     );

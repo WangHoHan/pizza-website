@@ -4,7 +4,7 @@ import './FlipCardFront.css';
 const FlipCardFront = ({name, price, picture}) => {
     return (
         <div className='flip-card-front'>
-            <picture className='shopping-cart'>
+            <picture>
                 <source srcSet={picture} />
                 <img className='img-flip-card-front' src={picture} alt={name} />
             </picture>

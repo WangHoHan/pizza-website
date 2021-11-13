@@ -13,8 +13,8 @@ const FlipCardBack = ({id, toppings}) => {
             <ul className='ul-flip-card-back'>
                 {ingredients.length && ingredients.filter(ingredient => toppings.includes(ingredient.id))
                     .map(filteredIngredient => {
-                    return <li className='li-flip-card-back' key={filteredIngredient.id}>{translate[filteredIngredient.name].toLowerCase()}</li>
-                })}
+                        return <li className='li-flip-card-back' key={filteredIngredient.id}>{translate[filteredIngredient.name].toLowerCase()}</li>
+                    })}
             </ul>
             <Link className='pick' role='button' to={`/product/${id}`}>
                 pick
