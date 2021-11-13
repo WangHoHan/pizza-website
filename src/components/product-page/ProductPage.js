@@ -11,22 +11,40 @@ const ProductPage = () => {
     const ingredients = useSelector((state) => state.ingredients);
 
     return (
-        <main>
+        <main className='main-product-page'>
             <section>
-                <article className='product-page-info'>
+                <article>
                     <picture>
                         <source srcSet={pizzaPictureDictionary[translate[pizza.name]]} />
                         <img  className='img-product-page' src={pizzaPictureDictionary[translate[pizza.name]]} alt={translate[pizza.name]} />
                     </picture>
                     <div className='description'>
                         <h1 className='h1-product-page'>{translate[pizza.name].toLowerCase()}</h1>
-                        <ul className='ul-product-page'>
+                        <ul className='toppings'>
                             {ingredients.length && ingredients.filter(ingredient => pizza.ingredients.includes(ingredient.id))
                                 .map(filteredIngredient => {
-                                    return <li className='li-product-page' key={filteredIngredient.id}>{translate[filteredIngredient.name].toLowerCase()}</li>
+                                    return <li className='topping' key={filteredIngredient.id}>{translate[filteredIngredient.name].toLowerCase()}</li>
                                 })}
                         </ul>
                     </div>
+                </article>
+            </section>
+            <section>
+                <article className='product-personalization'>
+                    <h2 className='h2-product-page'>personalize your pizza</h2>
+                    <ul className='ingredients'>
+                        {ingredients.length && ingredients.map(ingredient => {
+                                return (
+                                    <li className='ingredient' key={ingredient.id}>
+                                        <button className='add-additional-ingredient'>add</button>
+                                        <button className='remove-additional-ingredient'>remove</button>
+                                        <span className='additional-ingredient-amount'>0</span>
+                                        <span className='additional-ingredient-info'>
+                                            {translate[ingredient.name].toLowerCase()}, ₿{ingredient.price}
+                                        </span>
+                                    </li>);
+                            })}
+                    </ul>
                 </article>
             </section>
             <section>

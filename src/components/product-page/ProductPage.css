@@ -1,4 +1,4 @@
-.product-page-info {
+.main-product-page {
     margin: 2rem 2rem;
 }
 
@@ -25,21 +25,98 @@
     margin: 0;
 }
 
-.ul-product-page {
+.toppings {
     list-style-type: none;
     padding: 0;
 }
 
-.li-product-page {
+.topping {
     color: #617d98;
     font-size: 18px;
     margin-top: 0.4rem;
+}
+
+.product-personalization {
+    background-color: white;
+    border-radius: 1rem;
+    margin: 2rem auto;
+    padding: 1rem;
+    width: 85%;
+}
+
+.h2-product-page {
+    color: darkgreen;
+    margin-bottom: 2rem;
+    margin-left: 4rem;
+}
+
+.ingredients {
+    list-style-type: none;
+    margin-left: 4rem;
+    padding: 0;
+}
+
+.ingredient {
+    margin: 1rem 0;
+}
+
+.add-additional-ingredient {
+    background-color: yellow;
+    border-radius: 0.4rem;
+    border-style: none;
+    color: #617d98;
+    cursor: pointer;
+    padding: 0.6rem 1rem;
+    transition: 0.4s;
+}
+
+.add-additional-ingredient:hover {
+    background-color: lightcyan;
+    color: navy;
+}
+
+.remove-additional-ingredient {
+    background-color: coral;
+    border-radius: 0.4rem;
+    border-style: none;
+    color: lightyellow;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    padding: 0.6rem 1rem;
+    transition: 0.4s;
+}
+
+.remove-additional-ingredient:hover {
+    background-color: tomato;
+    color: white;
+}
+
+.additional-ingredient-amount {
+    color: purple;
+    margin-left: 1rem;
+}
+
+.additional-ingredient-info {
+    color: #617d98;
+    margin-left: 1rem;
 }
 
 @media only screen and (max-width: 1024px) {
     .description {
         display: block;
         margin: 10rem auto 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .h2-product-page {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .ingredients {
+        margin: 0 auto;
+        width: max-content;
     }
 }
 
@@ -55,5 +132,18 @@
 
     .h1-product-page {
         font-size: 24px;
+    }
+
+    .ingredients {
+        text-align: center;
+        width: 210px;
+    }
+
+    .add-additional-ingredient {
+        margin-bottom: 0.8rem;
+    }
+
+    .remove-additional-ingredient {
+        margin-bottom: 0.8rem;
     }
 }
