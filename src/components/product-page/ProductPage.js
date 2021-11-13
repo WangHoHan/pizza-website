@@ -48,7 +48,10 @@ const ProductPage = () => {
                 </article>
             </section>
             <section>
-                <article>
+                <article className='summary'>
+                    <h3 className='h3-product-page'>summary</h3>
+                    <span className='total'>₿0</span>
+                    <button className='add-to-bag' type='submit'>add to bag</button>
                 </article>
             </section>
         </main>

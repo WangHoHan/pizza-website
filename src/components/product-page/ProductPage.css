@@ -73,6 +73,7 @@
 .add-additional-ingredient:hover {
     background-color: lightcyan;
     color: navy;
+    text-decoration: underline;
 }
 
 .remove-additional-ingredient {
@@ -89,6 +90,7 @@
 .remove-additional-ingredient:hover {
     background-color: tomato;
     color: white;
+    text-decoration: underline;
 }
 
 .additional-ingredient-amount {
@@ -99,6 +101,42 @@
 .additional-ingredient-info {
     color: #617d98;
     margin-left: 1rem;
+}
+
+.summary {
+    background-color: white;
+    border-radius: 1rem;
+    margin: 2rem auto;
+    padding: 1rem;
+    text-align: center;
+    width: 85%;
+}
+
+.h3-product-page {
+    color: purple;
+}
+
+.total {
+    display: block;
+    font-size: 32px;
+    margin: 1.5rem 0;
+}
+
+.add-to-bag {
+    background-color: orange;
+    border-radius: 0.4rem;
+    border-style: unset;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    margin-bottom: 1rem;
+    padding: 0.8rem 1.4rem;
+    transition: 0.4s;
+}
+
+.add-to-bag:hover {
+    background-color: darkorange;
+    text-decoration: underline;
 }
 
 @media only screen and (max-width: 1024px) {
