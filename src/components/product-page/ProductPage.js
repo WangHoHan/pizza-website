@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useParams} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {translate} from '../../dictionaries/translate';
@@ -9,6 +9,20 @@ const ProductPage = () => {
     const {id} = useParams();
     const pizza = useSelector((state) => state.food.find(pizza => pizza.id === id));
     const ingredients = useSelector((state) => state.ingredients);
+    const [additionalIngredients, setAdditionalIngredients] = useState([]);
+
+    const addAdditionalIngredient = (ingredient) => {
+        setAdditionalIngredients(additionalIngredients => [...additionalIngredients, ingredient]);
+    };
+
+    const removeAdditionalIngredient = (ingredient) => {
+        let idx = additionalIngredients.findIndex(additionalIngredient => additionalIngredient === ingredient);
+        if (idx !== -1) {
+            let temp = [...additionalIngredients];
+            temp.splice(idx, 1);
+            setAdditionalIngredients(temp);
+        }
+    };
 
     return (
         <main className='main-product-page'>
@@ -36,9 +50,15 @@ const ProductPage = () => {
                         {ingredients.length && ingredients.map(ingredient => {
                                 return (
                                     <li className='ingredient' key={ingredient.id}>
-                                        <button className='add-additional-ingredient'>add</button>
-                                        <button className='remove-additional-ingredient'>remove</button>
-                                        <span className='additional-ingredient-amount'>0</span>
+                                        <button className='add-additional-ingredient' onClick={() => addAdditionalIngredient(ingredient.id)}>
+                                            add
+                                        </button>
+                                        <button className='remove-additional-ingredient' onClick={() => removeAdditionalIngredient(ingredient.id)}>
+                                            remove
+                                        </button>
+                                        <span className='additional-ingredient-amount'>
+                                            {additionalIngredients.filter(additionalIngredient => additionalIngredient === ingredient.id).length}
+                                        </span>
                                         <span className='additional-ingredient-info'>
                                             {translate[ingredient.name].toLowerCase()}, ₿{ingredient.price}
                                         </span>
