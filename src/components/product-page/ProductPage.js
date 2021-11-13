@@ -10,18 +10,31 @@ const ProductPage = () => {
     const pizza = useSelector((state) => state.food.find(pizza => pizza.id === id));
     const ingredients = useSelector((state) => state.ingredients);
     const [additionalIngredients, setAdditionalIngredients] = useState([]);
+    const [total, setTotal] = useState(pizza.price);
 
     const addAdditionalIngredient = (ingredient) => {
         setAdditionalIngredients(additionalIngredients => [...additionalIngredients, ingredient]);
+        const elem = ingredients.find(elem => elem.id === ingredient);
+        addToTotal(elem.price);
     };
 
     const removeAdditionalIngredient = (ingredient) => {
-        let idx = additionalIngredients.findIndex(additionalIngredient => additionalIngredient === ingredient);
+        const idx = additionalIngredients.findIndex(additionalIngredient => additionalIngredient === ingredient);
         if (idx !== -1) {
             let temp = [...additionalIngredients];
             temp.splice(idx, 1);
             setAdditionalIngredients(temp);
+            const elem = ingredients.find(elem => elem.id === ingredient);
+            subtractFromTotal(elem.price);
         }
+    };
+
+    const addToTotal = (money) => {
+        setTotal(total + money);
+    };
+
+    const subtractFromTotal = (money) => {
+        setTotal(total - money);
     };
 
     return (
@@ -70,7 +83,9 @@ const ProductPage = () => {
             <section>
                 <article className='summary'>
                     <h3 className='h3-product-page'>summary</h3>
-                    <span className='total'>₿0</span>
+                    <span className='total'>
+                        ₿{total}
+                    </span>
                     <button className='add-to-bag' type='submit'>add to bag</button>
                 </article>
             </section>
