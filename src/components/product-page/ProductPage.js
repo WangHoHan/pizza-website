@@ -1,14 +1,19 @@
 import React, {useState} from 'react';
 import {Link, useParams} from 'react-router-dom';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+import {actionCreators} from '../../store';
+import {bindActionCreators} from 'redux';
 import {translate} from '../../dictionaries/translate';
 import {pizzaPictureDictionary} from '../../dictionaries/pizzaPictureDictionary';
 import './ProductPage.css'
 
 const ProductPage = () => {
     const {id} = useParams();
+    const dispatch = useDispatch();
+    const {addProductToBag} = bindActionCreators(actionCreators, dispatch);
     const pizza = useSelector((state) => state.food.find(pizza => pizza.id === id));
     const ingredients = useSelector((state) => state.ingredients);
+
     const [additionalIngredients, setAdditionalIngredients] = useState([]);
     const [total, setTotal] = useState(pizza.price);
 
@@ -38,7 +43,7 @@ const ProductPage = () => {
     };
 
     const addToBag = () => {
-
+        addProductToBag({id: pizza.id, ingredients: additionalIngredients});
     };
 
     return (

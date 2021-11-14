@@ -8,3 +8,4 @@ export const GET_FOOD = 'GET_FOOD';
 export const SET_FOOD = 'SET_FOOD';
 export const GET_INGREDIENTS = 'GET_INGREDIENTS';
 export const SET_INGREDIENTS = 'SET_INGREDIENTS';
+export const ADD_PRODUCT_TO_BAG = 'ADD_PRODUCT_TO_BAG';

@@ -5,7 +5,8 @@ import {
     GET_FOOD,
     SET_FOOD,
     GET_INGREDIENTS,
-    SET_INGREDIENTS
+    SET_INGREDIENTS,
+    ADD_PRODUCT_TO_BAG
 } from '../../definitions';
 
 export const setSearchBarData = (data) => {
@@ -65,6 +66,15 @@ export const setIngredients = (ingredients) => {
         dispatch({
             type: SET_INGREDIENTS,
             payload: ingredients
+        });
+    };
+};
+
+export const addProductToBag = (product) => {
+    return (dispatch) => {
+        dispatch({
+            type: ADD_PRODUCT_TO_BAG,
+            payload: product
         });
     };
 };
