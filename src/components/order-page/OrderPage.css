@@ -1,0 +1,133 @@
+.main-order-page {
+    margin: 0 2rem;
+}
+
+.h1-order-page {
+    background-color: white;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    color: deepskyblue;
+    font-size: 18px;
+    letter-spacing: 0.1rem;
+    margin: 0 auto;
+    padding: 0.8rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+.bag {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product {
+    background-color: white;
+    border-radius: 1rem;
+    display: flex;
+    margin: 2rem 1rem;
+    padding: 2rem;
+}
+
+.product-info {
+    color: brown;
+    text-align: center;
+}
+
+.img-order-page {
+    max-width: 240px;
+}
+
+.ul-order-page {
+    border: 1px solid tomato;
+    border-radius: 0.4rem;
+    color: #617d98;
+    font-size: 18px;
+    list-style-type: none;
+    letter-spacing: 0.1rem;
+    margin: 1rem 0;
+    padding: 1rem 0;
+}
+
+.li-order-page {
+    margin: 1rem 0;
+}
+
+.product-modification {
+    color: darkgreen;
+}
+
+.h2-product-modification {
+    text-align: center;
+}
+
+.pieces {
+    list-style-type: none;
+    margin-left: 2rem;
+    padding: 0;
+}
+
+.piece {
+    margin: 1rem 0;
+}
+
+.add-additional-piece {
+    background-color: yellow;
+    border-radius: 0.4rem;
+    border-style: none;
+    color: #617d98;
+    cursor: pointer;
+    padding: 0.6rem 1rem;
+    transition: 0.4s;
+}
+
+.add-additional-piece:hover {
+    background-color: lightcyan;
+    color: navy;
+    text-decoration: underline;
+}
+
+.remove-additional-piece {
+    background-color: coral;
+    border-radius: 0.4rem;
+    border-style: none;
+    color: lightyellow;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    padding: 0.6rem 1rem;
+    transition: 0.4s;
+}
+
+.remove-additional-piece:hover {
+    background-color: tomato;
+    color: white;
+    text-decoration: underline;
+}
+
+.additional-piece-amount {
+    color: purple;
+    margin-left: 1rem;
+}
+
+.additional-piece-info {
+    color: #617d98;
+    margin-left: 1rem;
+}
+
+.remove-from-bag {
+    background-color: hotpink;
+    border-radius: 0.4rem;
+    border-style: none;
+    color: white;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    margin: 2rem auto;
+    padding: 0.6rem 4rem;
+    transition: 0.4s;
+}
+
+.remove-from-bag:hover {
+    background-color: deeppink;
+    text-decoration: underline;
+}
