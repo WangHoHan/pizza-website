@@ -16,5 +16,8 @@ export const translate = {
     'ananas': 'pineapple',
     'papryka': 'pepper',
     'cebula': 'onion',
-    'pomidor': 'tomato'
+    'pomidor': 'tomato',
+    'czosnkowy': 'garlic',
+    'ostry': 'hot',
+    '1000 wysp': '1000 island dressing'
 };
