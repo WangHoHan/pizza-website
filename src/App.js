@@ -37,13 +37,13 @@ function App() {
                 <Redirect to='/home' />
             </Route>
             <Route exact path='/home'>
-                {isLoadingFood && isLoadingIngredients ? <LoadingElement /> : <HomePage />}
+                {isLoadingFood || isLoadingIngredients ? <LoadingElement /> : <HomePage />}
             </Route>
             <Route path='/product/:id'>
-                {isLoadingFood && isLoadingIngredients ? <LoadingElement /> : <ProductPage />}
+                {isLoadingFood || isLoadingIngredients ? <LoadingElement /> : <ProductPage />}
             </Route>
             <Route exact path='/order'>
-                {isLoadingFood && isLoadingIngredients && isLoadingSauces ? <LoadingElement /> : <OrderPage />}
+                {isLoadingFood || isLoadingIngredients || isLoadingSauces ? <LoadingElement /> : <OrderPage />}
             </Route>
             <Route path='*' component={PageNotFound} />
         </Switch>

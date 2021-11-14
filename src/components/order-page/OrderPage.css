@@ -38,7 +38,7 @@
     max-width: 240px;
 }
 
-.ul-order-page {
+.basic-ingredients {
     border: 1px solid tomato;
     border-radius: 0.4rem;
     color: #617d98;
@@ -49,7 +49,7 @@
     padding: 1rem 0;
 }
 
-.li-order-page {
+.basic-ingredient{
     margin: 1rem 0;
 }
 
@@ -133,10 +133,90 @@
     text-decoration: underline;
 }
 
+.sauces {
+    background-color: white;
+    border-radius: 1rem;
+    display: block;
+    margin: 2rem 1rem;
+    padding: 1.8rem;
+    width: 100%;
+}
+
+.h2-sauces {
+    color: darkorange;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+}
+
+.ul-sauces {
+    list-style-type: none;
+    margin-left: 2rem;
+    padding: 0;
+}
+
+.sauce {
+    margin: 1rem 0;
+}
+
+.add-sauce {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0.4rem;
+    color: black;
+    cursor: pointer;
+    padding: 0.6rem 1rem;
+    transition: 0.4s;
+}
+
+.add-sauce:hover {
+    background-color: yellow;
+    border: 1px solid yellow;
+    color: #617d98;
+    text-decoration: underline;
+}
+
+.remove-sauce {
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 0.4rem;
+    color: white;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    padding: 0.6rem 1rem;
+    transition: 0.4s;
+}
+
+.remove-sauce:hover {
+    background-color: tomato;
+    border: 1px solid tomato;
+    color: white;
+    text-decoration: underline;
+}
+
+.sauce-amount {
+    color: purple;
+    margin-left: 1rem;
+}
+
+.sauce-info {
+    color: #617d98;
+    margin-left: 1rem;
+}
+
 @media only screen and (max-width: 768px) {
     .product {
         flex-wrap: wrap;
         justify-content: space-around;
+    }
+
+    .h2-sauces {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .ul-sauces {
+        margin: 0 auto;
+        width: max-content;
     }
 }
 
@@ -153,6 +233,19 @@
     }
 
     .remove-additional-piece {
+        margin-bottom: 0.8rem;
+    }
+
+    .ul-sauces {
+        text-align: center;
+        width: 210px;
+    }
+
+    .add-sauce {
+        margin-bottom: 0.8rem;
+    }
+
+    .remove-sauce {
         margin-bottom: 0.8rem;
     }
 }

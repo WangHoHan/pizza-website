@@ -11,7 +11,7 @@ const FlipCardBack = ({id, toppings}) => {
         <div className='flip-card-back'>
             <h1 className='h1-flip-card-back'>ingredients</h1>
             <ul className='ul-flip-card-back'>
-                {ingredients.length && ingredients.filter(ingredient => toppings.includes(ingredient.id))
+                {ingredients.filter(ingredient => toppings.includes(ingredient.id))
                     .map(filteredIngredient => {
                         return <li className='li-flip-card-back' key={filteredIngredient.id}>{translate[filteredIngredient.name].toLowerCase()}</li>
                     })}

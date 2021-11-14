@@ -23,17 +23,17 @@ const OrderPage = () => {
                                     <source srcSet={pizzaPictureDictionary[translate[food.find(pizza => pizza.id === product.id).name]]} />
                                     <img className='img-order-page' src={pizzaPictureDictionary[translate[food.find(pizza => pizza.id === product.id).name]]} alt={translate[food.find(pizza => pizza.id === product.id).name]} />
                                 </picture>
-                                <ul className='ul-order-page'>
-                                    {ingredients.length && ingredients.filter(ingredient => food.find(pizza => pizza.id === product.id).ingredients.includes(ingredient.id))
+                                <ul className='basic-ingredients'>
+                                    {ingredients.filter(ingredient => food.find(pizza => pizza.id === product.id).ingredients.includes(ingredient.id))
                                         .map(filteredIngredient => {
-                                            return <li className='li-order-page' key={filteredIngredient.id}>{translate[filteredIngredient.name].toLowerCase()}</li>
+                                            return <li className='basic-ingredient' key={filteredIngredient.id}>{translate[filteredIngredient.name].toLowerCase()}</li>
                                         })}
                                 </ul>
                             </div>
                             <div className='product-modification'>
                                 <h2 className='h2-product-modification'>personalize your pizza</h2>
                                 <ul className='pieces'>
-                                    {ingredients.length && ingredients.map(ingredient => {
+                                    {ingredients.map(ingredient => {
                                         return (
                                             <li className='piece' key={ingredient.id}>
                                                 <button className='add-additional-piece' /*onClick={() => addAdditionalIngredient(ingredient.id)}*/>
@@ -57,6 +57,29 @@ const OrderPage = () => {
                         </article>
                     );
                 })}
+                <article className='sauces'>
+                    <h2 className='h2-sauces'>dressings and sauces</h2>
+                    <ul className='ul-sauces'>
+                        {sauces.map(sauce => {
+                            return (
+                                <li className='sauce' key={sauce.id}>
+                                    <button className='add-sauce'>
+                                        add
+                                    </button>
+                                    <button className='remove-sauce'>
+                                        remove
+                                    </button>
+                                    <span className='sauce-amount'>
+                                        0
+                                    </span>
+                                    <span className='sauce-info'>
+                                        {translate[sauce.name].toLowerCase()}, ₿{sauce.price}
+                                    </span>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </article>
             </section>
         </main>
     );

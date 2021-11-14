@@ -57,7 +57,7 @@ const ProductPage = () => {
                     <div className='description'>
                         <h1 className='h1-product-page'>{translate[pizza.name].toLowerCase()}</h1>
                         <ul className='toppings'>
-                            {ingredients.length && ingredients.filter(ingredient => pizza.ingredients.includes(ingredient.id))
+                            {ingredients.filter(ingredient => pizza.ingredients.includes(ingredient.id))
                                 .map(filteredIngredient => {
                                     return <li className='topping' key={filteredIngredient.id}>{translate[filteredIngredient.name].toLowerCase()}</li>
                                 })}
@@ -69,7 +69,7 @@ const ProductPage = () => {
                 <article className='product-personalization'>
                     <h2 className='h2-product-page'>personalize your pizza</h2>
                     <ul className='ingredients'>
-                        {ingredients.length && ingredients.map(ingredient => {
+                        {ingredients.map(ingredient => {
                                 return (
                                     <li className='ingredient' key={ingredient.id}>
                                         <button className='add-additional-ingredient' onClick={() => addAdditionalIngredient(ingredient.id)}>

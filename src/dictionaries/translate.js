@@ -19,5 +19,5 @@ export const translate = {
     'pomidor': 'tomato',
     'czosnkowy': 'garlic',
     'ostry': 'hot',
-    '1000 wysp': '1000 island dressing'
+    '1000 wysp': '1000 island'
 };
