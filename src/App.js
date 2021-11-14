@@ -8,6 +8,7 @@ import Navigation from './components/navigation/Navigation';
 import LoadingElement from './components/loading-element/LoadingElement';
 import HomePage from './components/home-page/HomePage';
 import ProductPage from './components/product-page/ProductPage';
+import OrderPage from "./components/order-page/OrderPage";
 import PageNotFound from './components/page-not-found/PageNotFound';
 import Footer from './components/footer/Footer';
 
@@ -37,6 +38,9 @@ function App() {
             </Route>
             <Route path='/product/:id'>
                 {isLoadingFood && isLoadingIngredients ? <LoadingElement /> : <ProductPage />}
+            </Route>
+            <Route exact path='/order'>
+                {isLoadingFood && isLoadingIngredients ? <LoadingElement /> : <OrderPage />}
             </Route>
             <Route path='*' component={PageNotFound} />
         </Switch>

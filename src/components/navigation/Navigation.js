@@ -19,7 +19,9 @@ const Navigation = () => {
                 <SearchBar />
                 <picture className='shopping-cart-navigation'>
                     <source srcSet={pizzaBox} />
-                    <img className='pizza-box' src={pizzaBox} alt='Pizza box' />
+                    <Link to='/order'>
+                        <img className='pizza-box' src={pizzaBox} alt='Pizza box' />
+                    </Link>
                 </picture>
                 <picture>
                     <source srcSet={pixarOff} />
