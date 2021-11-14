@@ -14,15 +14,18 @@ import Footer from './components/footer/Footer';
 
 function App() {
     const dispatch = useDispatch();
-    const {setLoadingFood, setLoadingIngredients, getFood, getIngredients} = bindActionCreators(actionCreators, dispatch);
+    const {setLoadingFood, setLoadingIngredients, setLoadingSauces, getFood, getIngredients, getSauces} = bindActionCreators(actionCreators, dispatch);
     const isLoadingFood = useSelector((state) => state.loadingFood);
     const isLoadingIngredients = useSelector((state) => state.loadingIngredients);
+    const isLoadingSauces = useSelector((state) => state.loadingSauces);
 
     useEffect(() => {
         setLoadingFood(true);
         setLoadingIngredients(true);
+        setLoadingSauces(true);
         getFood();
         getIngredients();
+        getSauces();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -40,7 +43,7 @@ function App() {
                 {isLoadingFood && isLoadingIngredients ? <LoadingElement /> : <ProductPage />}
             </Route>
             <Route exact path='/order'>
-                {isLoadingFood && isLoadingIngredients ? <LoadingElement /> : <OrderPage />}
+                {isLoadingFood && isLoadingIngredients && isLoadingSauces ? <LoadingElement /> : <OrderPage />}
             </Route>
             <Route path='*' component={PageNotFound} />
         </Switch>

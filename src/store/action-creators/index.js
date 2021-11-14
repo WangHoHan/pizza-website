@@ -2,10 +2,13 @@ import {
     SET_SEARCH_BAR_DATA,
     SET_LOADING_FOOD,
     SET_LOADING_INGREDIENTS,
+    SET_LOADING_SAUCES,
     GET_FOOD,
     SET_FOOD,
     GET_INGREDIENTS,
     SET_INGREDIENTS,
+    GET_SAUCES,
+    SET_SAUCES,
     ADD_PRODUCT_TO_BAG
 } from '../../definitions';
 
@@ -31,6 +34,15 @@ export const setLoadingIngredients = (value) => {
     return (dispatch) => {
         dispatch({
             type: SET_LOADING_INGREDIENTS,
+            payload: value
+        });
+    };
+};
+
+export const setLoadingSauces = (value) => {
+    return (dispatch) => {
+        dispatch({
+            type: SET_LOADING_SAUCES,
             payload: value
         });
     };
@@ -66,6 +78,23 @@ export const setIngredients = (ingredients) => {
         dispatch({
             type: SET_INGREDIENTS,
             payload: ingredients
+        });
+    };
+};
+
+export const getSauces = (sauces) => {
+    return (dispatch) => {
+        dispatch({
+            type: GET_SAUCES
+        });
+    };
+};
+
+export const setSauces = (sauces) => {
+    return (dispatch) => {
+        dispatch({
+            type: SET_SAUCES,
+            payload: sauces
         });
     };
 };
