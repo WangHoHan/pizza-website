@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useParams} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {translate} from '../../dictionaries/translate';
 import {pizzaPictureDictionary} from '../../dictionaries/pizzaPictureDictionary';
@@ -35,6 +35,10 @@ const ProductPage = () => {
 
     const subtractFromTotal = (money) => {
         setTotal(total - money);
+    };
+
+    const addToBag = () => {
+
     };
 
     return (
@@ -86,7 +90,9 @@ const ProductPage = () => {
                     <span className='total'>
                         ₿{total}
                     </span>
-                    <button className='add-to-bag' type='submit'>add to bag</button>
+                    <Link to='/home' className='add-to-bag' type='submit' onClick={() => addToBag()}>
+                        add to bag
+                    </Link>
                 </article>
             </section>
         </main>
