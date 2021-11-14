@@ -43,7 +43,7 @@ const ProductPage = () => {
     };
 
     const addToBag = () => {
-        addProductToBag({id: pizza.id, ingredients: additionalIngredients});
+        addProductToBag({id: pizza.id, ingredients: additionalIngredients, money: total});
     };
 
     return (
