@@ -15,12 +15,12 @@ const ProductPage = () => {
     const ingredients = useSelector((state) => state.ingredients);
 
     const [additionalIngredients, setAdditionalIngredients] = useState([]);
-    const [total, setTotal] = useState(pizza.price);
+    const [money, setMoney] = useState(pizza.price);
 
     const addAdditionalIngredient = (ingredient) => {
         setAdditionalIngredients(additionalIngredients => [...additionalIngredients, ingredient]);
         const elem = ingredients.find(elem => elem.id === ingredient);
-        addToTotal(elem.price);
+        addToMoney(elem.price);
     };
 
     const removeAdditionalIngredient = (ingredient) => {
@@ -30,20 +30,20 @@ const ProductPage = () => {
             temp.splice(idx, 1);
             setAdditionalIngredients(temp);
             const elem = ingredients.find(elem => elem.id === ingredient);
-            subtractFromTotal(elem.price);
+            subtractFromMoney(elem.price);
         }
     };
 
-    const addToTotal = (money) => {
-        setTotal(total + money);
+    const addToMoney = (prix) => {
+        setMoney(money + prix);
     };
 
-    const subtractFromTotal = (money) => {
-        setTotal(total - money);
+    const subtractFromMoney = (prix) => {
+        setMoney(money - prix);
     };
 
     const addToBag = () => {
-        addProductToBag({id: pizza.id, ingredients: additionalIngredients, money: total});
+        addProductToBag({id: pizza.id, ingredients: additionalIngredients, money: money});
     };
 
     return (
@@ -90,10 +90,10 @@ const ProductPage = () => {
                 </article>
             </section>
             <section>
-                <article className='summary'>
-                    <h3 className='h3-product-page'>summary</h3>
-                    <span className='total'>
-                        ₿{total}
+                <article className='pricing'>
+                    <h3 className='h3-product-page'>money</h3>
+                    <span className='money'>
+                        ₿{money}
                     </span>
                     <Link to='/home' className='add-to-bag' type='submit' onClick={() => addToBag()}>
                         add to bag

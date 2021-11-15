@@ -81,6 +81,17 @@ const OrderPage = () => {
                     </ul>
                 </article>
             </section>
+            <section className='order-info'>
+                <article>
+                    <h3 className='h3-order-page'>charge</h3>
+                    <span className='charge'>
+                        ₿0
+                    </span>
+                    <button className='place-order' type='submit' value='place order'>
+                        place order
+                    </button>
+                </article>
+            </section>
         </main>
     );
 };

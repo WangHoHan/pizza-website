@@ -203,6 +203,43 @@
     margin-left: 1rem;
 }
 
+.order-info {
+    background-color: white;
+    border-radius: 1rem;
+    margin: 0 1rem 2rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.h3-order-page {
+    color: purple;
+}
+
+.charge {
+    display: block;
+    font-size: 32px;
+    margin: 1.5rem 0;
+}
+
+.place-order {
+    background-color: orange;
+    border-radius: 0.4rem;
+    border-style: unset;
+    color: white;
+    display: block;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0 auto 1rem;
+    padding: 0.8rem 1.4rem;
+    text-decoration: unset;
+    transition: 0.4s;
+}
+
+.place-order:hover {
+    background-color: darkorange;
+    text-decoration: underline;
+}
+
 @media only screen and (max-width: 768px) {
     .product {
         flex-wrap: wrap;
@@ -221,6 +258,10 @@
 }
 
 @media only screen and (max-width: 480px) {
+    .img-order-page {
+        max-width: 210px;
+    }
+
     .pieces {
         margin-left: auto;
         margin-right: auto;
