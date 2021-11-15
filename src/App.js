@@ -1,3 +1,5 @@
+import {read_cookie} from 'sfcookies';
+import {COOKIE_BAG} from './definitions';
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {actionCreators} from './store';
@@ -14,12 +16,16 @@ import Footer from './components/footer/Footer';
 
 function App() {
     const dispatch = useDispatch();
-    const {setLoadingFood, setLoadingIngredients, setLoadingSauces, getFood, getIngredients, getSauces} = bindActionCreators(actionCreators, dispatch);
+    const {setBag, setLoadingFood, setLoadingIngredients, setLoadingSauces, getFood, getIngredients, getSauces} = bindActionCreators(actionCreators, dispatch);
     const isLoadingFood = useSelector((state) => state.loadingFood);
     const isLoadingIngredients = useSelector((state) => state.loadingIngredients);
     const isLoadingSauces = useSelector((state) => state.loadingSauces);
 
     useEffect(() => {
+        const bag = read_cookie(COOKIE_BAG);
+        if (bag.length !== 0) {
+            setBag(bag);
+        }
         setLoadingFood(true);
         setLoadingIngredients(true);
         setLoadingSauces(true);

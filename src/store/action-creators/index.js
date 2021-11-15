@@ -9,6 +9,7 @@ import {
     SET_INGREDIENTS,
     GET_SAUCES,
     SET_SAUCES,
+    SET_BAG,
     ADD_PRODUCT_TO_BAG,
     REMOVE_PRODUCT_FROM_BAG,
     ADD_INGREDIENT_TO_PRODUCT,
@@ -100,6 +101,15 @@ export const setSauces = (sauces) => {
         dispatch({
             type: SET_SAUCES,
             payload: sauces
+        });
+    };
+};
+
+export const setBag = (bag) => {
+    return (dispatch) => {
+        dispatch({
+            type: SET_BAG,
+            payload: {bag}
         });
     };
 };
