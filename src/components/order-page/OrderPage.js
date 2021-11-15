@@ -8,18 +8,25 @@ import './OrderPage.css';
 
 const OrderPage = () => {
     const dispatch = useDispatch();
-    const {removeProductFromBag} = bindActionCreators(actionCreators, dispatch);
+    const {removeProductFromBag, addIngredientToProduct, removeIngredientFromProduct} = bindActionCreators(actionCreators, dispatch);
     const bag = useSelector((state) => state.bag);
     const food = useSelector((state) => state.food);
     const ingredients = useSelector((state) => state.ingredients);
     const sauces = useSelector((state) => state.sauces);
 
+    const addAdditionalPiece = (idx, ingredient, money) => {
+        addIngredientToProduct(idx, ingredient, money)
+    };
+
+    const removeAdditionalPiece = (idx, ingredient, money) => {
+        removeIngredientFromProduct(idx, ingredient, money);
+    };
+
     const removeFromBag = (idx) => {
         let money = food.find(pizza => pizza.id === bag.pizza[idx].id).price;
-        bag.pizza[idx].ingredients.map(topping => {
+        bag.pizza[idx].ingredients.forEach(topping => {
             const prix = ingredients.find(ingredient => ingredient.id === topping).price;
             money += prix;
-            return prix;
         });
         removeProductFromBag({idx :idx, money: money});
     };
@@ -50,15 +57,14 @@ const OrderPage = () => {
                                     {ingredients.map(ingredient => {
                                         return (
                                             <li className='piece' key={ingredient.id}>
-                                                <button className='add-additional-piece' type='button' value='add additional piece' /*onClick={() => addAdditionalIngredient(ingredient.id)}*/>
+                                                <button className='add-additional-piece' type='button' value='add additional piece' onClick={() => addAdditionalPiece(idx, ingredient.id, ingredients.find(elem => elem.id === ingredient.id).price)}>
                                                     add
                                                 </button>
-                                                <button className='remove-additional-piece' type='button' value='remove additional piece' /*onClick={() => removeAdditionalIngredient(ingredient.id)}*/>
+                                                <button className='remove-additional-piece' type='button' value='remove additional piece' onClick={() => removeAdditionalPiece(idx, ingredient.id, ingredients.find(elem => elem.id === ingredient.id).price)}>
                                                     remove
                                                 </button>
                                                 <span className='additional-piece-amount'>
-                                                    0
-                                                    {/*{additionalIngredients.filter(additionalIngredient => additionalIngredient === ingredient.id).length}*/}
+                                                    {product.ingredients.filter(topping => topping === ingredient.id).length}
                                                 </span>
                                                 <span className='additional-piece-info'>
                                                     {translate[ingredient.name].toLowerCase()}, ₿{ingredient.price}

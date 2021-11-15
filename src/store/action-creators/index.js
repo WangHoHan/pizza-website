@@ -10,7 +10,9 @@ import {
     GET_SAUCES,
     SET_SAUCES,
     ADD_PRODUCT_TO_BAG,
-    REMOVE_PRODUCT_FROM_BAG
+    REMOVE_PRODUCT_FROM_BAG,
+    ADD_INGREDIENT_TO_PRODUCT,
+    REMOVE_INGREDIENT_FROM_PRODUCT
 } from '../../definitions';
 
 export const setSearchBarData = (data) => {
@@ -83,7 +85,7 @@ export const setIngredients = (ingredients) => {
     };
 };
 
-export const getSauces = (sauces) => {
+export const getSauces = () => {
     return (dispatch) => {
         dispatch({
             type: GET_SAUCES
@@ -114,6 +116,24 @@ export const removeProductFromBag = (idx) => {
         dispatch({
             type: REMOVE_PRODUCT_FROM_BAG,
             payload: idx
+        });
+    };
+};
+
+export const addIngredientToProduct = (idx, ingredient, money) => {
+    return (dispatch) => {
+        dispatch({
+            type: ADD_INGREDIENT_TO_PRODUCT,
+            payload: {idx: idx, ingredient: ingredient, money: money}
+        });
+    };
+};
+
+export const removeIngredientFromProduct = (idx, ingredient, money) => {
+    return (dispatch) => {
+        dispatch({
+            type: REMOVE_INGREDIENT_FROM_PRODUCT,
+            payload: {idx: idx, ingredient: ingredient, money: money}
         });
     };
 };
