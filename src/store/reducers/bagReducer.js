@@ -3,6 +3,7 @@ import {bake_cookie} from 'sfcookies';
 import {
     COOKIE_BAG,
     SET_BAG,
+    INIT_SAUCES_TO_BAG,
     ADD_PRODUCT_TO_BAG,
     REMOVE_PRODUCT_FROM_BAG,
     ADD_INGREDIENT_TO_PRODUCT,
@@ -11,10 +12,16 @@ import {
     REMOVE_SAUCE_FROM_BAG
 } from '../../definitions';
 
-const reducer = (state = {pizza: [], sauce: [{id: '0a101384-aced-4412-8457-9d43f9037a68', count: 0}, {id: '770b60c3-fe75-4cc0-8604-41bc967931e9', count: 0}, {id: 'f5390a85-d0fe-4f16-931f-196dcbfbbc36', count: 0}], total: 0}, action) => {
+const reducer = (state = {pizza: [], sauce: [], total: 0}, action) => {
     switch (action.type) {
         case SET_BAG:
             return action.payload.bag;
+        case INIT_SAUCES_TO_BAG:
+            const sauceWithInitDressings = state.sauce;
+            action.payload.sauces.forEach(sauce => {
+                sauceWithInitDressings.push({id: sauce.id, count: 0});
+            });
+            return {...state, sauce: sauceWithInitDressings};
         case ADD_PRODUCT_TO_BAG:
             const pizza = {id: action.payload.id, ingredients: action.payload.ingredients};
             let pizzaWithPushedProduct = state.pizza;

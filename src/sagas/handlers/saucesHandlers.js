@@ -1,5 +1,5 @@
 import {all, call, put} from 'redux-saga/effects';
-import {setLoadingSauces, setSauces} from '../../store/action-creators';
+import {setLoadingSauces, setSauces, initSaucesToBag} from '../../store/action-creators';
 import {requestGetSauces} from '../requests/saucesRequests';
 
 export function* handleGetSauces() {
@@ -8,6 +8,7 @@ export function* handleGetSauces() {
         const {data} = response;
         yield all([
             put(setSauces(data)),
+            put(initSaucesToBag(data)),
             put(setLoadingSauces(false))
         ]);
     } catch (error) {
