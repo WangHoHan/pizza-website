@@ -8,7 +8,7 @@ import './OrderPage.css';
 
 const OrderPage = () => {
     const dispatch = useDispatch();
-    const {removeProductFromBag, addIngredientToProduct, removeIngredientFromProduct} = bindActionCreators(actionCreators, dispatch);
+    const {removeProductFromBag, addIngredientToProduct, removeIngredientFromProduct, addSauceToBag, removeSauceFromBag} = bindActionCreators(actionCreators, dispatch);
     const bag = useSelector((state) => state.bag);
     const food = useSelector((state) => state.food);
     const ingredients = useSelector((state) => state.ingredients);
@@ -29,6 +29,14 @@ const OrderPage = () => {
             money += prix;
         });
         removeProductFromBag({idx :idx, money: money});
+    };
+
+    const addSauce = (sauce, money) => {
+        addSauceToBag(sauce, money);
+    };
+
+    const removeSauce = (sauce, money) => {
+        removeSauceFromBag(sauce, money);
     };
 
     return (
@@ -85,14 +93,14 @@ const OrderPage = () => {
                         {sauces.map(sauce => {
                             return (
                                 <li className='sauce' key={sauce.id}>
-                                    <button className='add-sauce' type='button' value='add sauce'>
+                                    <button className='add-sauce' type='button' value='add sauce' onClick={() => addSauce(sauce.id, sauce.price)}>
                                         add
                                     </button>
-                                    <button className='remove-sauce' type='button' value='remove sauce'>
+                                    <button className='remove-sauce' type='button' value='remove sauce' onClick={() => removeSauce(sauce.id, sauce.price)}>
                                         remove
                                     </button>
                                     <span className='sauce-amount'>
-                                        0
+                                        {bag.sauce.find(dressing => dressing.id === sauce.id).count}
                                     </span>
                                     <span className='sauce-info'>
                                         {translate[sauce.name].toLowerCase()}, ₿{sauce.price}
