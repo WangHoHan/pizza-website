@@ -9,7 +9,8 @@ import {
     SET_INGREDIENTS,
     GET_SAUCES,
     SET_SAUCES,
-    ADD_PRODUCT_TO_BAG
+    ADD_PRODUCT_TO_BAG,
+    REMOVE_PRODUCT_FROM_BAG
 } from '../../definitions';
 
 export const setSearchBarData = (data) => {
@@ -104,6 +105,15 @@ export const addProductToBag = (product) => {
         dispatch({
             type: ADD_PRODUCT_TO_BAG,
             payload: product
+        });
+    };
+};
+
+export const removeProductFromBag = (idx) => {
+    return (dispatch) => {
+        dispatch({
+            type: REMOVE_PRODUCT_FROM_BAG,
+            payload: idx
         });
     };
 };

@@ -1,14 +1,28 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+import {actionCreators} from '../../store';
+import {bindActionCreators} from 'redux';
 import {translate} from '../../dictionaries/translate';
 import {pizzaPictureDictionary} from '../../dictionaries/pizzaPictureDictionary';
-import './OrderPage.css'
+import './OrderPage.css';
 
 const OrderPage = () => {
+    const dispatch = useDispatch();
+    const {removeProductFromBag} = bindActionCreators(actionCreators, dispatch);
     const bag = useSelector((state) => state.bag);
     const food = useSelector((state) => state.food);
     const ingredients = useSelector((state) => state.ingredients);
     const sauces = useSelector((state) => state.sauces);
+
+    const removeFromBag = (idx) => {
+        let money = food.find(pizza => pizza.id === bag.pizza[idx].id).price;
+        bag.pizza[idx].ingredients.map(topping => {
+            const prix = ingredients.find(ingredient => ingredient.id === topping).price;
+            money += prix;
+            return prix;
+        });
+        removeProductFromBag({idx :idx, money: money});
+    };
 
     return (
         <main className='main-order-page'>
@@ -36,10 +50,10 @@ const OrderPage = () => {
                                     {ingredients.map(ingredient => {
                                         return (
                                             <li className='piece' key={ingredient.id}>
-                                                <button className='add-additional-piece' /*onClick={() => addAdditionalIngredient(ingredient.id)}*/>
+                                                <button className='add-additional-piece' type='button' value='add additional piece' /*onClick={() => addAdditionalIngredient(ingredient.id)}*/>
                                                     add
                                                 </button>
-                                                <button className='remove-additional-piece' /*onClick={() => removeAdditionalIngredient(ingredient.id)}*/>
+                                                <button className='remove-additional-piece' type='button' value='remove additional piece' /*onClick={() => removeAdditionalIngredient(ingredient.id)}*/>
                                                     remove
                                                 </button>
                                                 <span className='additional-piece-amount'>
@@ -52,7 +66,9 @@ const OrderPage = () => {
                                             </li>);
                                     })}
                                 </ul>
-                                <button className='remove-from-bag'>remove from bag</button>
+                                <button className='remove-from-bag' type='button' value='remove from bag' onClick={() => removeFromBag(idx)}>
+                                    remove from bag
+                                </button>
                             </div>
                         </article>
                     );
@@ -63,10 +79,10 @@ const OrderPage = () => {
                         {sauces.map(sauce => {
                             return (
                                 <li className='sauce' key={sauce.id}>
-                                    <button className='add-sauce'>
+                                    <button className='add-sauce' type='button' value='add sauce'>
                                         add
                                     </button>
-                                    <button className='remove-sauce'>
+                                    <button className='remove-sauce' type='button' value='remove sauce'>
                                         remove
                                     </button>
                                     <span className='sauce-amount'>
@@ -85,7 +101,7 @@ const OrderPage = () => {
                 <article>
                     <h3 className='h3-order-page'>charge</h3>
                     <span className='charge'>
-                        ₿0
+                        ₿{bag.total}
                     </span>
                     <button className='place-order' type='submit' value='place order'>
                         place order

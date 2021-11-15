@@ -72,10 +72,10 @@ const ProductPage = () => {
                         {ingredients.map(ingredient => {
                                 return (
                                     <li className='ingredient' key={ingredient.id}>
-                                        <button className='add-additional-ingredient' onClick={() => addAdditionalIngredient(ingredient.id)}>
+                                        <button className='add-additional-ingredient' type='button' value='add additional ingredient' onClick={() => addAdditionalIngredient(ingredient.id)}>
                                             add
                                         </button>
-                                        <button className='remove-additional-ingredient' onClick={() => removeAdditionalIngredient(ingredient.id)}>
+                                        <button className='remove-additional-ingredient' type='button' value='remove additional ingredient' onClick={() => removeAdditionalIngredient(ingredient.id)}>
                                             remove
                                         </button>
                                         <span className='additional-ingredient-amount'>
