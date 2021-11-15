@@ -89,8 +89,8 @@ const ProductPage = () => {
                     </ul>
                 </article>
             </section>
-            <section>
-                <article className='pricing'>
+            <section className='pricing'>
+                <article>
                     <h3 className='h3-product-page'>money</h3>
                     <span className='money'>
                         ₿{money}

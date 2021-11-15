@@ -137,9 +137,9 @@
     background-color: white;
     border-radius: 1rem;
     display: block;
-    margin: 2rem 1rem;
-    padding: 1.8rem;
-    width: 100%;
+    margin: 2rem auto;
+    padding: 1rem;
+    width: 85%;
 }
 
 .h2-sauces {

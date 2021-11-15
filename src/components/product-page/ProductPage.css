@@ -23,6 +23,7 @@
     color: brown;
     font-size: 32px;
     margin: 0;
+    width: 164px;
 }
 
 .toppings {
@@ -106,10 +107,9 @@
 .pricing {
     background-color: white;
     border-radius: 1rem;
-    margin: 2rem auto 0;
+    margin: 2rem 1rem 0;
     padding: 1rem;
     text-align: center;
-    width: 85%;
 }
 
 .h3-product-page {
@@ -173,6 +173,7 @@
 
     .h1-product-page {
         font-size: 24px;
+        width: 123px;
     }
 
     .ingredients {
