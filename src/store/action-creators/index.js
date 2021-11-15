@@ -10,6 +10,7 @@ import {
     GET_SAUCES,
     SET_SAUCES,
     SET_BAG,
+    CLEAR_BAG,
     INIT_SAUCES_TO_BAG,
     ADD_PRODUCT_TO_BAG,
     REMOVE_PRODUCT_FROM_BAG,
@@ -111,6 +112,14 @@ export const setBag = (bag) => {
         dispatch({
             type: SET_BAG,
             payload: {bag}
+        });
+    };
+};
+
+export const clearBag = () => {
+    return (dispatch) => {
+        dispatch({
+            type: CLEAR_BAG
         });
     };
 };

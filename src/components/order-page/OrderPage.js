@@ -1,14 +1,19 @@
+import {delete_cookie} from 'sfcookies'
 import React from 'react';
+import {useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {actionCreators} from '../../store';
 import {bindActionCreators} from 'redux';
+import axios from 'axios';
+import {COOKIE_BAG, URL_ORDER} from '../../definitions';
 import {translate} from '../../dictionaries/translate';
 import {pizzaPictureDictionary} from '../../dictionaries/pizzaPictureDictionary';
 import './OrderPage.css';
 
 const OrderPage = () => {
     const dispatch = useDispatch();
-    const {removeProductFromBag, addIngredientToProduct, removeIngredientFromProduct, addSauceToBag, removeSauceFromBag} = bindActionCreators(actionCreators, dispatch);
+    const {clearBag, removeProductFromBag, addIngredientToProduct, removeIngredientFromProduct, addSauceToBag, removeSauceFromBag} = bindActionCreators(actionCreators, dispatch);
+    const history = useHistory();
     const bag = useSelector((state) => state.bag);
     const food = useSelector((state) => state.food);
     const ingredients = useSelector((state) => state.ingredients);
@@ -37,6 +42,18 @@ const OrderPage = () => {
 
     const removeSauce = (sauce, money) => {
         removeSauceFromBag(sauce, money);
+    };
+
+    const placeOrder = () => {
+        axios.request({
+            method: 'post',
+            url: URL_ORDER,
+            data: bag
+        }).then(response => {
+            clearBag();
+            delete_cookie(COOKIE_BAG);
+            history.push('/home');
+        }).catch(error => console.log(error));
     };
 
     return (
@@ -117,7 +134,7 @@ const OrderPage = () => {
                     <span className='charge'>
                         ₿{bag.total}
                     </span>
-                    <button className='place-order' type='submit' value='place order'>
+                    <button className='place-order' type='submit' value='place order' onClick={() => placeOrder()}>
                         place order
                     </button>
                 </article>
