@@ -1,5 +1,38 @@
 body {
-    background: #f1f5f8;
+    color-scheme: light;
+    --body-background-color: #f1f5f8;
+    --navigation-background-color: yellow;
+    --search-bar-outline-color: wheat;
+    --flip-card-background-color: white;
+    --h1-flip-card-front-color: brown;
+    --h4-flip-card-front-color: #617d98;
+    --h1-flip-card-back-color: brown;
+    --ul-flip-card-back-color: #617d98;
+    --pick-flip-card-back-background-color: yellow;
+    --pick-flip-card-back-color: #617d98;
+    --pick-flip-card-back-color-hover: tomato;
+    --footer-background-color: yellow;
+    --author-color: tomato;
+
+    background-color: var(--body-background-color);
+    transition: 0.4s;
+}
+
+body.dark {
+    color-scheme: dark;
+    --body-background-color: #303338;
+    --navigation-background-color: #1c1e21;
+    --search-bar-outline-color: transparent;
+    --flip-card-background-color: #1c1e24;
+    --h1-flip-card-front-color: crimson;
+    --h4-flip-card-front-color: darkorange;
+    --h1-flip-card-back-color: crimson;
+    --ul-flip-card-back-color: darkorange;
+    --pick-flip-card-back-background-color: black;
+    --pick-flip-card-back-color: tomato;
+    --pick-flip-card-back-color-hover: crimson;
+    --footer-background-color: #1c1e21;
+    --author-color: pink;
 }
 
 #root {

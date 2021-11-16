@@ -3,12 +3,12 @@
 }
 
 .h1-flip-card-front {
-    color: brown;
+    color: var(--h1-flip-card-front-color);
     margin-top: 0.5rem;
 }
 
 .h4-flip-card-front {
-    color: #617d98;
+    color: var(--h4-flip-card-front-color);
     font-size: 0.75rem;
     margin-top: 0.25rem;
 }

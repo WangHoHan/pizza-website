@@ -5,13 +5,13 @@
 }
 
 .h1-flip-card-back {
-    color: brown;
+    color: var(--h1-flip-card-back-color);
     margin-top: 2rem;
 }
 .ul-flip-card-back {
     border: 1px solid tomato;
     border-radius: 0.4rem;
-    color: #617d98;
+    color: var(--ul-flip-card-back-color);
     font-size: 18px;
     list-style-type: none;
     letter-spacing: 0.1rem;
@@ -24,11 +24,11 @@
 }
 
 .pick {
-    background-color: yellow;
+    background-color: var(--pick-flip-card-back-background-color);
     border-radius: 0.5rem;
     border-style: none;
     bottom: 0;
-    color: #617d98;
+    color: var(--pick-flip-card-back-color);
     cursor: pointer;
     font-size: 1rem;
     font-weight: bold;
@@ -42,6 +42,6 @@
 }
 
 .pick:hover {
-    color: tomato;
+    color: var(--pick-flip-card-back-color-hover);
     text-decoration: underline;
 }

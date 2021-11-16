@@ -1,7 +1,7 @@
 .header-navigation {
     -webkit-border-bottom-left-radius: 0.6rem;
     -webkit-border-bottom-right-radius: 0.6rem;
-    background-color: yellow;
+    background-color: var(--navigation-background-color);
     padding: 0.4rem;
 }
 

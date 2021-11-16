@@ -1,5 +1,5 @@
 .article-flip-card {
-    background-color: white;
+    background-color: var(--flip-card-background-color);
     border-radius: 1rem;
     height: 400px;
     margin: 1rem;

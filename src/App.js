@@ -27,7 +27,7 @@ function App() {
     useEffect(() => {
         const nightMode = read_cookie(COOKIE_NIGHT_MODE);
         if (nightMode.length !== 0) {
-            setNightMode(nightMode);
+            setNightMode({mode: nightMode, init: 'yes'});
         }
         const bag = read_cookie(COOKIE_BAG);
         if (bag.length !== 0) {

@@ -2,7 +2,7 @@
     -webkit-border-top-left-radius: 0.6rem;
     -webkit-border-top-right-radius: 0.6rem;
     align-items: center;
-    background-color: yellow;
+    background-color: var(--footer-background-color);
     bottom: 0;
     display: flex;
     height: 2rem;
@@ -12,7 +12,7 @@
 }
 
 .address-footer {
-    color: tomato;
+    color: var(--author-color);
     font-size: 13px;
     font-style: normal;
     font-weight: normal;

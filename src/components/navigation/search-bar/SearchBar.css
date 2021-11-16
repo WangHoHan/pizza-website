@@ -12,7 +12,7 @@
 }
 
 .input-search-bar:focus {
-    outline-color: wheat;
+    outline-color: var(--search-bar-outline-color);
 }
 
 .input-search-bar:focus::placeholder {

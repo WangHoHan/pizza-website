@@ -13,7 +13,7 @@ const FlipCardBack = ({id, toppings}) => {
 
     return (
         <div className='flip-card-back'>
-            <h1 className='h1-flip-card-back'>ingredients</h1>
+            <h1 className='h1-flip-card-back'>toppings</h1>
             <ul className='ul-flip-card-back'>
                 {ingredients.filter(ingredient => toppings.includes(ingredient.id))
                     .map(filteredIngredient => {

@@ -16,7 +16,7 @@ const Navigation = () => {
     const isNightMode = useSelector((state) => state.nightMode);
 
     const changeNightMode = (mode) => {
-        setNightMode(mode);
+        setNightMode({mode: mode, init: 'no'});
     }
 
     return (
