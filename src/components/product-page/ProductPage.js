@@ -46,7 +46,7 @@ const ProductPage = () => {
         addProductToBag({id: pizza.id, ingredients: additionalIngredients, money: money});
         setPopupMessage('product added to bag');
         setPopup(true);
-        window.scrollTo(0, 0);
+        window.scrollTo({top: 0, behavior: 'smooth'});
     };
 
     return (
