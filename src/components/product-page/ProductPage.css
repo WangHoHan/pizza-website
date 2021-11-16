@@ -12,7 +12,7 @@
 }
 
 .description {
-    background-color: white;
+    background-color: var(--description-background-color);
     border-radius: 1rem;
     max-width: max-content;
     padding: 1rem 4rem;
@@ -20,7 +20,7 @@
 }
 
 .h1-product-page {
-    color: brown;
+    color: var(--h1-product-page);
     font-size: 32px;
     margin: 0;
     width: 164px;
@@ -32,13 +32,13 @@
 }
 
 .topping {
-    color: #617d98;
+    color: var(--topping-color);
     font-size: 18px;
     margin-top: 0.4rem;
 }
 
 .product-personalization {
-    background-color: white;
+    background-color: var(--product-personalization-background-color);
     border-radius: 1rem;
     margin: 2rem auto;
     padding: 1rem;
@@ -46,7 +46,7 @@
 }
 
 .h2-product-page {
-    color: darkgreen;
+    color: var(--h2-product-page-color);
     margin-bottom: 2rem;
     margin-left: 4rem;
 }
@@ -62,26 +62,26 @@
 }
 
 .add-additional-ingredient {
-    background-color: yellow;
+    background-color: var(--add-additional-ingredient-background-color);
     border-radius: 0.4rem;
     border-style: none;
-    color: #617d98;
+    color: var(--add-additional-ingredient-color);
     cursor: pointer;
     padding: 0.6rem 1rem;
     transition: 0.4s;
 }
 
 .add-additional-ingredient:hover {
-    background-color: lightcyan;
-    color: navy;
+    background-color: var(--add-additional-ingredient-hover-background-color);
+    color: var(--add-additional-ingredient-hover-color);
     text-decoration: underline;
 }
 
 .remove-additional-ingredient {
-    background-color: coral;
+    background-color: var(--remove-additional-ingredient-background-color);
     border-radius: 0.4rem;
     border-style: none;
-    color: lightyellow;
+    color: var(--remove-additional-ingredient-color);
     cursor: pointer;
     margin-left: 0.5rem;
     padding: 0.6rem 1rem;
@@ -89,23 +89,23 @@
 }
 
 .remove-additional-ingredient:hover {
-    background-color: tomato;
-    color: white;
+    background-color: var(--remove-additional-ingredient-hover-background-color);
+    color: var(--remove-additional-ingredient-hover-color);
     text-decoration: underline;
 }
 
 .additional-ingredient-amount {
-    color: purple;
+    color: var(--additional-ingredient-amount-color);
     margin-left: 1rem;
 }
 
 .additional-ingredient-info {
-    color: #617d98;
+    color: var(--additional-ingredient-info-color);
     margin-left: 1rem;
 }
 
 .pricing {
-    background-color: white;
+    background-color: var(--pricing-background-color);
     border-radius: 1rem;
     margin: 2rem 1rem 0;
     padding: 1rem;
@@ -113,17 +113,18 @@
 }
 
 .h3-product-page {
-    color: purple;
+    color: var(--h3-product-page);
 }
 
 .money {
+    color: var(--money-color);
     display: block;
     font-size: 32px;
     margin: 1.5rem 0;
 }
 
 .add-to-bag {
-    background-color: orange;
+    background-color: var(--add-to-bag-background-color);
     border-radius: 0.4rem;
     border-style: unset;
     color: white;
@@ -138,7 +139,7 @@
 }
 
 .add-to-bag:hover {
-    background-color: darkorange;
+    background-color: var(--add-to-bag-hover-background-color);
     text-decoration: underline;
 }
 
