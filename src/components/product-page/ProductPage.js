@@ -10,7 +10,7 @@ import './ProductPage.css'
 const ProductPage = () => {
     const {id} = useParams();
     const dispatch = useDispatch();
-    const {addProductToBag} = bindActionCreators(actionCreators, dispatch);
+    const {setPopup, setPopupMessage, addProductToBag} = bindActionCreators(actionCreators, dispatch);
     const pizza = useSelector((state) => state.food.find(pizza => pizza.id === id));
     const ingredients = useSelector((state) => state.ingredients);
 
@@ -44,6 +44,9 @@ const ProductPage = () => {
 
     const addToBag = () => {
         addProductToBag({id: pizza.id, ingredients: additionalIngredients, money: money});
+        setPopupMessage('product added to bag');
+        setPopup(true);
+        window.scrollTo(0, 0);
     };
 
     return (
