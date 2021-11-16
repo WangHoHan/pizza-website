@@ -1,5 +1,5 @@
 import {read_cookie} from 'sfcookies';
-import {COOKIE_BAG} from './definitions';
+import {COOKIE_NIGHT_MODE, COOKIE_BAG} from './definitions';
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {actionCreators} from './store';
@@ -17,7 +17,7 @@ import Footer from './components/footer/Footer';
 
 function App() {
     const dispatch = useDispatch();
-    const {setBag, setPopup, setLoadingFood, setLoadingIngredients, setLoadingSauces, getFood, getIngredients, getSauces} = bindActionCreators(actionCreators, dispatch);
+    const {setNightMode, setBag, setPopup, setLoadingFood, setLoadingIngredients, setLoadingSauces, getFood, getIngredients, getSauces} = bindActionCreators(actionCreators, dispatch);
     const isPopup = useSelector((state) => state.popup)
     const popupMessage = useSelector((state) => state.popupMessage);
     const isLoadingFood = useSelector((state) => state.loadingFood);
@@ -25,6 +25,10 @@ function App() {
     const isLoadingSauces = useSelector((state) => state.loadingSauces);
 
     useEffect(() => {
+        const nightMode = read_cookie(COOKIE_NIGHT_MODE);
+        if (nightMode.length !== 0) {
+            setNightMode(nightMode);
+        }
         const bag = read_cookie(COOKIE_BAG);
         if (bag.length !== 0) {
             setBag(bag);

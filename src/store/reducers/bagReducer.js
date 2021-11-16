@@ -1,5 +1,4 @@
 import {bake_cookie} from 'sfcookies';
-
 import {
     COOKIE_BAG,
     SET_BAG,

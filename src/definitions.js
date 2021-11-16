@@ -1,3 +1,4 @@
+export const COOKIE_NIGHT_MODE = 'night_mode';
 export const COOKIE_BAG = 'bag';
 export const API = 'http://localhost:3333/api';
 export const URL_PIZZA = API + '/pizza';
