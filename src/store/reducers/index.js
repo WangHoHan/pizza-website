@@ -1,4 +1,5 @@
 import {combineReducers} from 'redux';
+import nightModeReducer from './nightModeReducer';
 import searchBarReducer from './searchBarReducer';
 import popupReducer from './popupReducer.js';
 import popupMessageReducer from './popupMessageReducer';
@@ -11,6 +12,7 @@ import saucesReducer from './saucesReducer';
 import bagReducer from './bagReducer';
 
 const reducers = combineReducers({
+    nightMode: nightModeReducer,
     searchBar: searchBarReducer,
     popup: popupReducer,
     popupMessage: popupMessageReducer,

@@ -1,4 +1,5 @@
 import {
+    SET_NIGHT_MODE,
     SET_SEARCH_BAR_DATA,
     SET_POPUP,
     SET_POPUP_MESSAGE,
@@ -21,6 +22,15 @@ import {
     ADD_SAUCE_TO_BAG,
     REMOVE_SAUCE_FROM_BAG
 } from '../../definitions';
+
+export const setNightMode = (mode) => {
+    return (dispatch) => {
+        dispatch({
+            type: SET_NIGHT_MODE,
+            payload: mode
+        });
+    };
+};
 
 export const setSearchBarData = (data) => {
     return (dispatch) => {

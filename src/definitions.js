@@ -4,6 +4,7 @@ export const URL_PIZZA = API + '/pizza';
 export const URL_INGREDIENT = API + '/ingredient';
 export const URL_SAUCE = API + '/sauce';
 export const URL_ORDER = API + '/order';
+export const SET_NIGHT_MODE = 'SET_NIGHT_MODE';
 export const SET_SEARCH_BAR_DATA = 'SET_SEARCH_BAR_DATA';
 export const SET_POPUP = 'SET_POPUP';
 export const SET_POPUP_MESSAGE = 'SET_POPUP_MESSAGE';

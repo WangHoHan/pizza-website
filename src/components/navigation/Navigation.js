@@ -1,5 +1,8 @@
-import React, {useState} from 'react';
+import React  from 'react';
 import {Link} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
+import {actionCreators} from '../../store';
+import {bindActionCreators} from 'redux';
 import logo from '../../assets/navigation/logo.png';
 import pizzaBox from '../../assets/navigation/pizza-box.png';
 import pixarOn from '../../assets/navigation/night-mode/pixar-on.png';
@@ -8,10 +11,12 @@ import './Navigation.css';
 import SearchBar from './search-bar/SearchBar';
 
 const Navigation = () => {
-    const [isNightMode, setIsNightMode] = useState(false);
+    const dispatch = useDispatch();
+    const {setNightMode} = bindActionCreators(actionCreators, dispatch);
+    const isNightMode = useSelector((state) => state.nightMode);
 
-    const changeNightMode = (light) => {
-        setIsNightMode(light);
+    const changeNightMode = (mode) => {
+        setNightMode(mode);
     }
 
     return (
