@@ -3,6 +3,8 @@ body {
     --body-background-color: #f1f5f8;
     --navigation-background-color: yellow;
     --search-bar-outline-color: wheat;
+    --loading-element-background-color: white;
+    --h1-loading-element-color: brown;
     --flip-card-background-color: white;
     --h1-flip-card-front-color: brown;
     --h4-flip-card-front-color: #617d98;
@@ -23,6 +25,8 @@ body.dark {
     --body-background-color: #303338;
     --navigation-background-color: #1c1e21;
     --search-bar-outline-color: transparent;
+    --loading-element-background-color: #1c1e24;
+    --h1-loading-element-color: crimson;
     --flip-card-background-color: #1c1e24;
     --h1-flip-card-front-color: crimson;
     --h4-flip-card-front-color: darkorange;
