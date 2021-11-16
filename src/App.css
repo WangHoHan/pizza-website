@@ -3,6 +3,15 @@ body {
     --body-background-color: #f1f5f8;
     --navigation-background-color: yellow;
     --search-bar-outline-color: wheat;
+    --popup-background-color: white;
+    --popup-border: deepskyblue;
+    --popup-color: brown;
+    --popup-ok-background-color: deepskyblue;
+    --popup-ok-border: white;
+    --popup-ok-color: white;
+    --popup-ok-hover-background-color: white;
+    --popup-ok-hover-border: deepskyblue;
+    --popup-ok-hover-color: deepskyblue;
     --loading-element-background-color: white;
     --h1-loading-element-color: brown;
     --flip-card-background-color: white;
@@ -25,6 +34,15 @@ body.dark {
     --body-background-color: #303338;
     --navigation-background-color: #1c1e21;
     --search-bar-outline-color: transparent;
+    --popup-background-color: #1c1e24;
+    --popup-border: darkorange;
+    --popup-color: crimson;
+    --popup-ok-background-color: darkorange;
+    --popup-ok-border: darkorange;
+    --popup-ok-color: black;
+    --popup-ok-hover-background-color: black;
+    --popup-ok-hover-border: darkorange;
+    --popup-ok-hover-color: darkorange;
     --loading-element-background-color: #1c1e24;
     --h1-loading-element-color: crimson;
     --flip-card-background-color: #1c1e24;
@@ -50,19 +68,19 @@ main {
 }
 
 .ok {
-    background-color: deepskyblue;
-    border: 1px solid white;
+    background-color: var(--popup-ok-background-color);
+    border: 1px solid var(--popup-ok-border);
     border-radius: 0.4rem;
-    color: white;
+    color: var(--popup-ok-color);
     cursor: pointer;
     padding: 0.5rem 1.8rem;
     transition: 0.4s;
 }
 
 .ok:hover {
-    background-color: white;
-    border: 1px solid deepskyblue;
-    color: deepskyblue;
+    background-color: var(--popup-ok-hover-background-color);
+    border: 1px solid var(--popup-ok-hover-border);
+    color: var(--popup-ok-hover-color);
     text-decoration: underline;
 }
 
