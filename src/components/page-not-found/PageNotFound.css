@@ -5,7 +5,7 @@
 }
 
 .article-page-not-found {
-    background-color: white;
+    background-color: var(--page-not-found-background-color);
     border-radius: 1rem;
     margin: 0 auto;
     padding: 1rem 2rem;
@@ -17,7 +17,7 @@
 }
 
 .link-page-not-found {
-    background-color: tomato;
+    background-color: var(--back-to-home-page-background-color);
     border-radius: 0.4rem;
     border-style: none;
     color: white;
@@ -33,7 +33,7 @@
 }
 
 .link-page-not-found:hover {
-    background-color: hotpink;
+    background-color: var(--back-to-home-page-hover-background-color);
     text-decoration: underline;
 }
 

@@ -22,6 +22,9 @@ body {
     --pick-flip-card-back-background-color: yellow;
     --pick-flip-card-back-color: #617d98;
     --pick-flip-card-back-color-hover: tomato;
+    --page-not-found-background-color: white;
+    --back-to-home-page-background-color: tomato;
+    --back-to-home-page-hover-background-color: hotpink;
     --footer-background-color: yellow;
     --author-color: tomato;
 
@@ -53,6 +56,9 @@ body.dark {
     --pick-flip-card-back-background-color: black;
     --pick-flip-card-back-color: tomato;
     --pick-flip-card-back-color-hover: crimson;
+    --page-not-found-background-color: white;
+    --back-to-home-page-background-color: black;
+    --back-to-home-page-hover-background-color: darkorange;
     --footer-background-color: #1c1e21;
     --author-color: pink;
 }
