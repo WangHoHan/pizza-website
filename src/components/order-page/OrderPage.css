@@ -290,4 +290,12 @@
     .remove-sauce {
         margin-bottom: 0.8rem;
     }
+
+    .sauce-amount {
+        margin-left: 1.1rem;
+    }
+
+    .sauce-info {
+        margin-right: 1.1rem;
+    }
 }
