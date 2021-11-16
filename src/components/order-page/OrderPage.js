@@ -13,7 +13,7 @@ import LoadingElement from "../loading-element/LoadingElement";
 
 const OrderPage = () => {
     const dispatch = useDispatch();
-    const {clearBag, removeProductFromBag, addIngredientToProduct, removeIngredientFromProduct, addSauceToBag, removeSauceFromBag} = bindActionCreators(actionCreators, dispatch);
+    const {setPopup, setPopupMessage, clearBag, removeProductFromBag, addIngredientToProduct, removeIngredientFromProduct, addSauceToBag, removeSauceFromBag} = bindActionCreators(actionCreators, dispatch);
     const history = useHistory();
     const [isLoading, setIsLoading] = useState(false);
     const bag = useSelector((state) => state.bag);
@@ -56,9 +56,28 @@ const OrderPage = () => {
             clearBag();
             delete_cookie(COOKIE_BAG);
             setIsLoading(false);
+            setPopupMessage(response.data.message.toLowerCase());
+            setPopup(true);
             history.push('/home');
         }).catch(error => {
-            console.log(error);
+            if (error.message === 'Network Error') {
+                setPopupMessage(error.message.toLowerCase());
+                setPopup(true);
+            }
+            else if (JSON.parse(error.request.response).message && JSON.parse(error.request.response).message.length){
+                let popupMessage = '';
+                const messages = JSON.parse(error.request.response).message;
+                messages.forEach((message, idx) => {
+                    if (idx === messages.length - 1) {
+                        popupMessage += message;
+                    }
+                    else {
+                        popupMessage += message + ', ';
+                    }
+                });
+                setPopupMessage(popupMessage.toLowerCase());
+                setPopup(true);
+            }
             setIsLoading(false);
         });
     };

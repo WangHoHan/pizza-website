@@ -1,5 +1,5 @@
 import {all, call, put} from 'redux-saga/effects';
-import {setLoadingSauces, setSauces, initSaucesToBag} from '../../store/action-creators';
+import {setPopupMessage, setPopup, setLoadingSauces, setSauces, initSaucesToBag} from '../../store/action-creators';
 import {requestGetSauces} from '../requests/saucesRequests';
 
 export function* handleGetSauces() {
@@ -12,7 +12,15 @@ export function* handleGetSauces() {
             put(setLoadingSauces(false))
         ]);
     } catch (error) {
-        console.log(error);
-        yield put(setLoadingSauces(false));
+        if (error.message === 'Network Error') {
+            yield all([
+                put(setLoadingSauces(false)),
+                put(setPopupMessage(error.message.toLowerCase())),
+                put(setPopup(true))
+            ]);
+        }
+        else {
+            yield put(setLoadingSauces(false));
+        }
     }
 }

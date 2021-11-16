@@ -12,6 +12,23 @@ main {
     padding-bottom: 2rem;
 }
 
+.ok {
+    background-color: deepskyblue;
+    border: 1px solid white;
+    border-radius: 0.4rem;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem 1.8rem;
+    transition: 0.4s;
+}
+
+.ok:hover {
+    background-color: white;
+    border: 1px solid deepskyblue;
+    color: deepskyblue;
+    text-decoration: underline;
+}
+
 @media only screen and (min-width: 1920px) {
     #root {
         left: 50%;

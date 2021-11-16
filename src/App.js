@@ -7,6 +7,7 @@ import {bindActionCreators} from 'redux';
 import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
 import './App.css';
 import Navigation from './components/navigation/Navigation';
+import Popup from './components/popup/Popup';
 import LoadingElement from './components/loading-element/LoadingElement';
 import HomePage from './components/home-page/HomePage';
 import ProductPage from './components/product-page/ProductPage';
@@ -16,7 +17,9 @@ import Footer from './components/footer/Footer';
 
 function App() {
     const dispatch = useDispatch();
-    const {setBag, setLoadingFood, setLoadingIngredients, setLoadingSauces, getFood, getIngredients, getSauces} = bindActionCreators(actionCreators, dispatch);
+    const {setBag, setPopup, setLoadingFood, setLoadingIngredients, setLoadingSauces, getFood, getIngredients, getSauces} = bindActionCreators(actionCreators, dispatch);
+    const isPopup = useSelector((state) => state.popup)
+    const popupMessage = useSelector((state) => state.popupMessage);
     const isLoadingFood = useSelector((state) => state.loadingFood);
     const isLoadingIngredients = useSelector((state) => state.loadingIngredients);
     const isLoadingSauces = useSelector((state) => state.loadingSauces);
@@ -35,9 +38,17 @@ function App() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    const closePopup = () => {
+        setPopup(false);
+    };
+
   return (
     <BrowserRouter>
         <Navigation />
+        <Popup trigger={isPopup}>
+            <h4>{popupMessage}</h4>
+            <button className='ok' type='button' value='ok' onClick={() => closePopup()}>ok</button>
+        </Popup>
         <Switch>
             <Route exact path='/'>
                 <Redirect to='/home' />

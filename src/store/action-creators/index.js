@@ -1,5 +1,7 @@
 import {
     SET_SEARCH_BAR_DATA,
+    SET_POPUP,
+    SET_POPUP_MESSAGE,
     SET_LOADING_FOOD,
     SET_LOADING_INGREDIENTS,
     SET_LOADING_SAUCES,
@@ -25,6 +27,24 @@ export const setSearchBarData = (data) => {
         dispatch({
             type: SET_SEARCH_BAR_DATA,
             payload: data
+        });
+    };
+};
+
+export const setPopup = (value) => {
+    return (dispatch) => {
+        dispatch({
+            type: SET_POPUP,
+            payload: value
+        });
+    };
+};
+
+export const setPopupMessage = (message) => {
+    return (dispatch) => {
+        dispatch({
+            type: SET_POPUP_MESSAGE,
+            payload: message
         });
     };
 };

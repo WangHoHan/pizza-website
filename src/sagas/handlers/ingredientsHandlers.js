@@ -1,5 +1,5 @@
 import {all, call, put} from 'redux-saga/effects';
-import {setLoadingIngredients, setIngredients} from '../../store/action-creators';
+import {setPopupMessage, setPopup, setLoadingIngredients, setIngredients} from '../../store/action-creators';
 import {requestGetIngredients} from "../requests/ingredientsRequests";
 
 export function* handleGetIngredients() {
@@ -11,7 +11,15 @@ export function* handleGetIngredients() {
             put(setLoadingIngredients(false))
         ]);
     } catch (error) {
-        console.log(error);
-        yield put(setLoadingIngredients(false));
+        if (error.message === 'Network Error') {
+            yield all([
+                put(setLoadingIngredients(false)),
+                put(setPopupMessage(error.message.toLowerCase())),
+                put(setPopup(true))
+            ]);
+        }
+        else {
+            yield put(setLoadingIngredients(false));
+        }
     }
 }
