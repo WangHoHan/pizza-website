@@ -20,7 +20,7 @@
 }
 
 .h1-product-page {
-    color: var(--h1-product-page);
+    color: var(--h1-product-page-color);
     font-size: 32px;
     margin: 0;
     width: 164px;
@@ -113,7 +113,7 @@
 }
 
 .h3-product-page {
-    color: var(--h3-product-page);
+    color: var(--h3-product-page-color);
 }
 
 .money {

@@ -3,10 +3,10 @@
 }
 
 .h1-order-page {
-    background-color: white;
+    background-color: var(--h1-order-page-background-color);
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
-    color: deepskyblue;
+    color: var(--h1-order-page-color);
     font-size: 18px;
     letter-spacing: 0.1rem;
     margin: 0 auto;
@@ -22,7 +22,7 @@
 }
 
 .product {
-    background-color: white;
+    background-color: var(--product-background-color);
     border-radius: 1rem;
     display: flex;
     margin: 2rem 1rem 0;
@@ -30,7 +30,7 @@
 }
 
 .product-info {
-    color: brown;
+    color: var(--product-info-color);
     text-align: center;
 }
 
@@ -41,7 +41,7 @@
 .basic-ingredients {
     border: 1px solid tomato;
     border-radius: 0.4rem;
-    color: #617d98;
+    color: var(--basic-ingredients-color);
     font-size: 18px;
     list-style-type: none;
     letter-spacing: 0.1rem;
@@ -54,7 +54,7 @@
 }
 
 .product-modification {
-    color: darkgreen;
+    color: var(--product-modification-color);
 }
 
 .h2-product-modification {
@@ -73,26 +73,26 @@
 }
 
 .add-additional-piece {
-    background-color: yellow;
+    background-color: var(--add-additional-piece-background-color);
     border-radius: 0.4rem;
     border-style: none;
-    color: #617d98;
+    color: var(--add-additional-piece-color);
     cursor: pointer;
     padding: 0.6rem 1rem;
     transition: 0.4s;
 }
 
 .add-additional-piece:hover {
-    background-color: lightcyan;
-    color: navy;
+    background-color: var(--add-additional-piece-hover-background-color);
+    color: var(--add-additional-piece-hover-color);
     text-decoration: underline;
 }
 
 .remove-additional-piece {
-    background-color: coral;
+    background-color: var(--remove-additional-piece-background-color);
     border-radius: 0.4rem;
     border-style: none;
-    color: lightyellow;
+    color: var(--remove-additional-piece-color);
     cursor: pointer;
     margin-left: 0.5rem;
     padding: 0.6rem 1rem;
@@ -100,23 +100,23 @@
 }
 
 .remove-additional-piece:hover {
-    background-color: tomato;
-    color: white;
+    background-color: var(--remove-additional-piece-hover-background-color);
+    color: var(--remove-additional-piece-hover-color);
     text-decoration: underline;
 }
 
 .additional-piece-amount {
-    color: purple;
+    color: var(--additional-piece-amount-color);
     margin-left: 1rem;
 }
 
 .additional-piece-info {
-    color: #617d98;
+    color: var(--additional-piece-info-color);
     margin-left: 1rem;
 }
 
 .remove-from-bag {
-    background-color: hotpink;
+    background-color: var(--remove-from-bag-background-color);
     border-radius: 0.4rem;
     border-style: none;
     color: white;
@@ -129,12 +129,12 @@
 }
 
 .remove-from-bag:hover {
-    background-color: deeppink;
+    background-color: var(--remove-from-bag-hover-background-color);
     text-decoration: underline;
 }
 
 .sauces {
-    background-color: white;
+    background-color: var(--sauces-background-color);
     border-radius: 1rem;
     display: block;
     margin: 2rem auto;
@@ -143,7 +143,7 @@
 }
 
 .h2-sauces {
-    color: darkorange;
+    color: var(--h2-sauces-color);
     margin-bottom: 2rem;
     margin-left: 2rem;
 }
@@ -159,27 +159,27 @@
 }
 
 .add-sauce {
-    background-color: white;
-    border: 1px solid black;
+    background-color: var(--add-sauce-background-color);
+    border: 1px solid var(--add-sauce-border);
     border-radius: 0.4rem;
-    color: black;
+    color: var(--add-sauce-color);
     cursor: pointer;
     padding: 0.6rem 1rem;
     transition: 0.4s;
 }
 
 .add-sauce:hover {
-    background-color: yellow;
-    border: 1px solid yellow;
-    color: #617d98;
+    background-color: var(--add-sauce-hover-background-color);
+    border: 1px solid var(--add-sauce-hover-border);
+    color: var(--add-sauce-hover-color);
     text-decoration: underline;
 }
 
 .remove-sauce {
-    background-color: black;
-    border: 1px solid white;
+    background-color: var(--remove-sauce-background-color);
+    border: 1px solid var(--remove-sauce-border);
     border-radius: 0.4rem;
-    color: white;
+    color: var(--remove-sauce-color);
     cursor: pointer;
     margin-left: 0.5rem;
     padding: 0.6rem 1rem;
@@ -187,24 +187,24 @@
 }
 
 .remove-sauce:hover {
-    background-color: tomato;
-    border: 1px solid tomato;
-    color: white;
+    background-color: var(--remove-sauce-hover-background-color);
+    border: 1px solid var(--remove-sauce-hover-border);
+    color: var(--remove-sauce-hover-color);
     text-decoration: underline;
 }
 
 .sauce-amount {
-    color: purple;
+    color: var(--sauce-amount-color);
     margin-left: 1rem;
 }
 
 .sauce-info {
-    color: #617d98;
+    color: var(--sauce-info-color);
     margin-left: 1rem;
 }
 
 .order-info {
-    background-color: white;
+    background-color: var(--order-info-background-color);
     border-radius: 1rem;
     margin: 0 1rem 2rem;
     padding: 1rem;
@@ -212,17 +212,18 @@
 }
 
 .h3-order-page {
-    color: purple;
+    color: var(--h3-order-page-color);
 }
 
 .charge {
+    color: var(--charge-color);
     display: block;
     font-size: 32px;
     margin: 1.5rem 0;
 }
 
 .place-order {
-    background-color: orange;
+    background-color: var(--place-order-background-color);
     border-radius: 0.4rem;
     border-style: unset;
     color: white;
@@ -236,7 +237,7 @@
 }
 
 .place-order:hover {
-    background-color: darkorange;
+    background-color: var(--place-order-hover-background-color);
     text-decoration: underline;
 }
 
