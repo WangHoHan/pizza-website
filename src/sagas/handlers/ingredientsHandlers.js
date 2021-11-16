@@ -13,7 +13,6 @@ export function* handleGetIngredients() {
     } catch (error) {
         if (error.message === 'Network Error') {
             yield all([
-                put(setLoadingIngredients(false)),
                 put(setPopupMessage(error.message.toLowerCase())),
                 put(setPopup(true))
             ]);

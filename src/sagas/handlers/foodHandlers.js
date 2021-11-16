@@ -13,7 +13,6 @@ export function* handleGetFood() {
     } catch (error) {
         if (error.message === 'Network Error') {
             yield all([
-                put(setLoadingFood(false)),
                 put(setPopupMessage(error.message.toLowerCase())),
                 put(setPopup(true))
             ]);
