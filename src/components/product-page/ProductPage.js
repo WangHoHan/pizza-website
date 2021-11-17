@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Link, useParams} from 'react-router-dom';
+import {Link, useHistory, useParams} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {actionCreators} from '../../store';
 import {bindActionCreators} from 'redux';
@@ -11,7 +11,15 @@ const ProductPage = () => {
     const {id} = useParams();
     const dispatch = useDispatch();
     const {setPopup, setPopupMessage, addProductToBag} = bindActionCreators(actionCreators, dispatch);
-    const pizza = useSelector((state) => state.food.find(pizza => pizza.id === id));
+    const history = useHistory();
+    const pizza = useSelector((state) => {
+        const pizza = state.food.find(pizza => pizza.id === id);
+        if (pizza === undefined) {
+            history.push('/page-not-found');
+            return {id: '', name: 'MARGHERITA', price: 0, ingredients: []};
+        }
+        return pizza;
+    });
     const ingredients = useSelector((state) => state.ingredients);
 
     const [additionalIngredients, setAdditionalIngredients] = useState([]);

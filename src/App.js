@@ -60,12 +60,13 @@ function App() {
             <Route exact path='/home'>
                 {isLoadingFood || isLoadingIngredients ? <LoadingElement /> : <HomePage />}
             </Route>
-            <Route path='/product/:id'>
+            <Route exact path='/product/:id'>
                 {isLoadingFood || isLoadingIngredients ? <LoadingElement /> : <ProductPage />}
             </Route>
             <Route exact path='/order'>
                 {isLoadingFood || isLoadingIngredients || isLoadingSauces ? <LoadingElement /> : <OrderPage />}
             </Route>
+            <Route exact path='/page-not-found' component={PageNotFound} />
             <Route path='*' component={PageNotFound} />
         </Switch>
         <Footer />
